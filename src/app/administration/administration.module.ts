@@ -47,7 +47,7 @@ import { AllTicketsComponent } from './pages/System/all-tickets/all-tickets.comp
 import { ViewTicketComponent } from './pages/System/all-tickets/view-ticket/view-ticket.component';
 import { UserGuideComponent } from './pages/System/user-guide/user-guide.component';
 import { SurveysComponent } from './pages/System/surveys/surveys.component';
-import { AssignTicketComponent } from './pages/System/all-tickets/assign-ticket/assign-ticket.component';
+import { DataInputManagementComponent } from './pages/System/all-tickets/data-input-management/data-input-management.component';
 import { PriorityLookupComponent } from './pages/lookups/priority-lookup/priority-lookup.component';
 import { FaqLookupComponent } from './pages/lookups/faq-lookup/faq-lookup.component';
 import { StatusLookupComponent } from './pages/lookups/status-lookup/status-lookup.component';
@@ -107,7 +107,7 @@ import { EscalateLookupComponent } from './pages/lookups/escalate-lookup/escalat
     ViewTicketComponent,
     UserGuideComponent,
     SurveysComponent,
-    AssignTicketComponent,
+    DataInputManagementComponent,
     PriorityLookupComponent,
     FaqLookupComponent,
     StatusLookupComponent,
@@ -145,4 +145,4 @@ import { EscalateLookupComponent } from './pages/lookups/escalate-lookup/escalat
     MaterialModule,
   ],
 })
-export class AdministrationModule {}
+export class AdministrationModule { }

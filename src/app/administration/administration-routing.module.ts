@@ -20,7 +20,7 @@ import { AllTicketsComponent } from './pages/System/all-tickets/all-tickets.comp
 import { ViewTicketComponent } from './pages/System/all-tickets/view-ticket/view-ticket.component';
 import { UserGuideComponent } from './pages/System/user-guide/user-guide.component';
 import { SurveysComponent } from './pages/System/surveys/surveys.component';
-import { AssignTicketComponent } from './pages/System/all-tickets/assign-ticket/assign-ticket.component';
+import { DataInputManagementComponent } from './pages/System/all-tickets/data-input-management/data-input-management.component';
 import { ManageTicketsComponent } from './pages/System/all-tickets/manage-tickets/manage-tickets.component';
 import { RolesManagementComponent } from './pages/AccessManagement/roles-management/roles-management.component';
 import { RolesMaintenanceComponent } from './pages/AccessManagement/roles-management/roles-maintenance/roles-maintenance.component';
@@ -167,8 +167,8 @@ const routes: Routes = [
         data: { permission: 'REPORTS', preload: true }
       },
       {
-        path: 'assign-ticket',
-        component: AssignTicketComponent,
+        path: 'data-input-management',
+        component:DataInputManagementComponent,
         canActivate: [CanActivateModuleGuard],
         data: { permission: 'REPORTS', preload: true }
       },
