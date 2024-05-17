@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AssignTicketComponent } from './assign-ticket.component';
+import { AssignTicketComponent } from './data-input-management.component';
 
 describe('AssignTicketComponent', () => {
   let component: AssignTicketComponent;
@@ -8,9 +8,9 @@ describe('AssignTicketComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AssignTicketComponent ]
+      declarations: [AssignTicketComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(AssignTicketComponent);
     component = fixture.componentInstance;
