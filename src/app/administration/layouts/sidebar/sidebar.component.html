@@ -37,60 +37,65 @@
         <!-- Global Params -->
         <a mat-list-item routerLinkActive="list-item-active" routerLink="/system/priority/maintenance" 
         skipLocationChange>
-          <mat-icon>subdirectory_arrow_right</mat-icon> Priority
+          <mat-icon>subdirectory_arrow_right</mat-icon> subsidiary
         </a>
         <a mat-list-item routerLinkActive="list-item-active" routerLink="/system/category/maintenance"
           skipLocationChange>
-          <mat-icon>subdirectory_arrow_right</mat-icon> Category
+          <mat-icon>subdirectory_arrow_right</mat-icon> Definitions & Groupings
         </a>
         <a mat-list-item routerLinkActive="list-item-active" routerLink="/system/status/maintenance"
         skipLocationChange>
-        <mat-icon>subdirectory_arrow_right</mat-icon> Status
+        <mat-icon>subdirectory_arrow_right</mat-icon> Reporting Period
       </a>
-        <a mat-list-item routerLinkActive="list-item-active"
+        <!-- <a mat-list-item routerLinkActive="list-item-active"
           routerLink="/system/faq/maintenance" skipLocationChange>
           <mat-icon>subdirectory_arrow_right</mat-icon> FAQS
         </a>
         <a mat-list-item routerLinkActive="list-item-active"
           routerLink="/system/assignee/maintenance" skipLocationChange>
-          <mat-icon>subdirectory_arrow_right</mat-icon> Assignee
-        </a>
+          <mat-icon>subdirectory_arrow_right</mat-icon> Data Input Management
+        </a> -->
       </mat-nav-list>
     </mat-expansion-panel>
   </mat-accordion>
   <a *ngIf="authorized" mat-list-item class="nav-title main-link" routerLinkActive="list-item-active"
-    routerLink="/system/assign-ticket" skipLocationChange>
+  routerLink="/system/assign-ticket" skipLocationChange>
+  <mat-icon>assignment_ind</mat-icon>
+  Data Input Management
+</a>
+  <a *ngIf="authorized" mat-list-item class="nav-title main-link" routerLinkActive="list-item-active"
+    routerLink="/system/view-report" skipLocationChange>
     <mat-icon>assignment_ind</mat-icon>
-    Assign Tickets
+    Financial reports
   </a>
   <a *ngIf="authorized" mat-list-item class="nav-title main-link" routerLinkActive="list-item-active"
     routerLink="/system/my-ticket" skipLocationChange>
     <mat-icon>assignment_ind</mat-icon>
-    My Tickets
+    Notes
   </a>
- <a *ngIf="authorized" mat-list-item class="nav-title main-link" routerLinkActive="list-item-active"
+ <!-- <a *ngIf="authorized" mat-list-item class="nav-title main-link" routerLinkActive="list-item-active"
     routerLink="/system/manage-ticket" skipLocationChange>
     <mat-icon>assignment_ind</mat-icon>
-    Manage Tickets
-  </a>
-  <a *ngIf="authorized" mat-list-item class="nav-title main-link" routerLinkActive="list-item-active"
+    
+  </a> -->
+  <!-- <a *ngIf="authorized" mat-list-item class="nav-title main-link" routerLinkActive="list-item-active"
   routerLink="/system/all-ticket" skipLocationChange>
   <mat-icon>receipt</mat-icon>
   All Tickets
-</a>
-  <a *ngIf="authorized" mat-list-item class="nav-title main-link" routerLinkActive="list-item-active"
+</a> -->
+  <!-- <a *ngIf="authorized" mat-list-item class="nav-title main-link" routerLinkActive="list-item-active"
     routerLink="/system/user-guide" skipLocationChange>
     <mat-icon>help</mat-icon>
     User Guide
-  </a>
+  </a> -->
 
-  <a *ngIf="authorized" mat-list-item class="nav-title main-link" routerLinkActive="list-item-active"
+  <!-- <a *ngIf="authorized" mat-list-item class="nav-title main-link" routerLinkActive="list-item-active"
     routerLink="/system/survey" skipLocationChange>
     <mat-icon>rate_review</mat-icon>
 
     Surveys
-  </a>
-  <mat-accordion *ngIf="authorized" class="app-nav-accordion">
+  </a> -->
+  <!-- <mat-accordion *ngIf="authorized" class="app-nav-accordion">
     <mat-expansion-panel [ngStyle]="{'background-color': 'rgba(139, 0, 0, 1)'}" class="mat-elevation-z0">
       <mat-expansion-panel-header>
         <mat-panel-title class="nav-title">
@@ -103,7 +108,7 @@
         </a>
       </mat-nav-list>
     </mat-expansion-panel>
-  </mat-accordion>
+  </mat-accordion> -->
   <mat-accordion *ngIf="authorized" class="app-nav-accordion">
     <mat-expansion-panel [ngStyle]="{'background-color': 'rgba(139, 0, 0, 1)'}" class="mat-elevation-z0">
       <mat-expansion-panel-header>
@@ -130,4 +135,10 @@
       </mat-nav-list>
     </mat-expansion-panel>
   </mat-accordion>
+  <a *ngIf="authorized" mat-list-item class="nav-title main-link" routerLinkActive="list-item-active"
+    routerLink="/system/survey" skipLocationChange>
+    <mat-icon>rate_review</mat-icon>
+
+    Systems
+  </a>
 </mat-nav-list>
