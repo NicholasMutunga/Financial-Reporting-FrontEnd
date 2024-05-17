@@ -1,0 +1,70 @@
+
+// .container * {
+//   font-family: 'Arial', sans-serif; /* Example font family */
+//   font-size: 16px; /* Example font size */
+// }
+.container {
+    max-width: 95%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f9f9f9; // Beige background color
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+   // text-align: center;
+  //  display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  // justify-content: center;
+  // font-family: 'Arial', sans-serif; 
+  // font-size: 16px;
+}
+
+  h1 {
+    font-size: 2em;
+    color: #333;
+  }
+  
+//   p {
+//     line-height: 1.6;
+//     margin-top: 10px;
+//   }
+  
+   ul {
+    list-style-position: inside;
+    padding-left: 20px;
+  }
+  .faq-question {
+    cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 5px;
+  }
+  
+  .faq-answer {
+    margin-top: 10px;
+    padding-left: 20px;
+  }
+
+  hr {
+    height: 2px;
+  color: #ed1d61;
+  background-color: #ed1d61;
+  font-size: 0;
+  border: 0;
+  margin: 20px 0;
+}
+  .user_interface, 
+  //.blue-theme,
+.process-explanations,
+.faqs,
+.contact-support {
+    background-color: #f9f9f9; /* Matches container background */
+    padding: 20px; /* Adjust padding as needed */
+    border-radius: 8px; /* Matches container border-radius */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Matches container box-shadow */
+    margin-bottom: 20px; /* Adds space below each section */
+   
+    
+}
+.addition-sign {
+    float: right;
+  }

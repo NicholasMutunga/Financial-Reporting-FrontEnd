@@ -1,0 +1,101 @@
+
+<mat-card>
+  <!-- <div *ngIf="loading">
+    <p><small>Processing, please wait...</small></p>
+    <p>
+      <mat-progress-bar mode="query"></mat-progress-bar>
+    </p>
+  </div> -->
+  <mat-card-header class="breadcrumb">
+    <div>
+      <a routerLink="/system">All-tickets / </a>
+    </div>
+  </mat-card-header>
+  <div class="row justify-content-center">
+    <div class="col-md-4 col-sm-12 d-flex justify-content-center">
+      <h2> <strong>RAISE A NEW TICKET</strong></h2>
+    </div>
+  </div>
+  <mat-divider></mat-divider>
+  <br>
+  <div class="container-fluid">
+    <form class="form" [formGroup]="formData" novalidate>
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+          <div class="form-group">
+            <div class="col-md-6 col-sm-12 form-column ">
+              <label>Category</label>
+            </div>
+            <div class="col-md-6 col-sm-12 form-column">
+              <input type="text" formControlName="category" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.category.errors }"/>
+              <mat-icon color="primary" (click)="categoryCodeLookup()">search</mat-icon>
+            </div>
+            
+          </div>
+
+        </div>
+
+        <div class="col-md-6 col-sm-12">
+          <div class="form-group">
+            <div class="col-md-6 col-sm-12 form-column ">
+              <label>Priority</label>
+            </div>
+            <div class="col-md-6 col-sm-12 form-column">
+              <input type="text" formControlName="priority" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.priority.errors }" />
+              <mat-icon color="primary" (click)="priorityCodeLookup()">search</mat-icon>
+            </div>
+            
+          </div>
+        </div>
+
+        <div class="col-md-6 col-sm-12">
+          <div class="form-group">
+            <div class="col-md-6 col-sm-12 form-column ">
+              <label>Ticket Title</label>
+            </div>
+            <div class="col-md-6 col-sm-12 form-column">
+              <input type="text" class="form-control" formControlName="title"
+                [ngClass]="{ 'is-invalid': submitted && f.title.errors }"
+                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                maxlength="1000" minlength="2">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <div class="form-group">
+            <div class="col-md-6 col-sm-12 form-column ">
+              <label>Ticket Description</label>
+            </div>
+            <div class="col-md-6 col-sm-12 form-column">
+              <textarea type="text" class="form-control" formControlName="description"
+                [ngClass]="{ 'is-invalid': submitted && f.description.errors }"
+                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                maxlength="120" minlength="2"></textarea>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="col-md-6 col-sm-12">
+          <div class="form-group">
+            <div class="col-md-6 col-sm-12 form-column ">
+              <label>Ticket Document</label>
+            </div>
+            <div class="col-md-6 col-sm-12 form-column">
+              <input type="file" formControlName="document" (change)="onFileChange($event)"/>
+            </div>
+          </div>
+        </div> -->
+      </div>
+      <br>
+      <hr>
+      <br>
+      <button mat-raised-button type="submit" class="pull-left bg-secondary text-white"
+      routerLink="/system/report/maintenance">BACK</button>
+      <button class="pull-right bg-primary text-white color-blue" mat-raised-button (click)="onSubmit()">
+        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>{{btnText}}
+      </button>
+      <br>
+    </form>
+  </div>
+</mat-card>

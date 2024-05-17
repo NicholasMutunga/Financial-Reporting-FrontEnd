@@ -1,0 +1,107 @@
+<div class="container" [@slideIn]>
+  <h1 style="color: #3F51B5;">E-Ticketing System User Manual</h1>
+  <h1>Introduction</h1>
+  <p>Welcome to the user manual for E-ticketing System. This document is intended to provide you with all the information you need to get started with and use the system effectively.</p>
+<div class="user_interface">
+  <h1 h1 style="color: #3F51B5;">User Interface Overview</h1>
+  <p>The E-ticketing user interface is designed to be intuitive and easy to use. Here's a brief overview of the different parts of the interface:</p>
+  <div class="blue-theme">
+    <ul>
+      <li>Landing Page</li>
+      <li>Reporting an Issue</li>
+      <li>Escalating an Issue</li>
+      <li>Suggesting an Idea</li>
+      
+      <li>Assigning Tickets</li>
+      <li>Surveys</li>
+    </ul>
+  </div>
+</div>
+<hr>
+  <div class="process-explanations">
+    <h1 h1 style="color: #3F51B5;">Using E-ticketing System</h1>
+    <p>To use E-ticketing System please follow these steps:</p>
+
+    <h1>Process 1: Landing Page</h1>
+    <p>To access various functionalities of the E-ticketing System, start from the landing page:</p>
+    <ol>
+      <li>Click on "Report an issue" to raise a ticket.</li>
+      <li>Click on "Suggest an idea" to propose new features or modules that can enhance the system's efficiency.</li>
+      <li>Click on "Escalate an issue" if a previously raised ticket requires further support.</li>
+      <li>Click on "Knowledge base" to learn more about the operationalization of the system.</li>
+    </ol>
+    
+    
+    <h1>Process 2: Reporting an Issue</h1>
+    <p>To raise a new ticket, follow these steps:</p>
+    <ol>
+      <li>Navigate to the "RAISE A NEW TICKET" section.</li>
+      <li>Fill in the required details:</li>
+      <ul>
+        <li>Category: Select or search for the ticket category.</li>
+        <li>Priority: Choose the ticket priority level.</li>
+        <li>Ticket Title: Provide a concise title for the ticket.</li>
+        <li>Ticket Description: Describe the issue or request in detail.</li>
+      </ul>
+      <li>Click the "Submit" button to raise the ticket.</li>
+    </ol>
+    
+    <h1>Process 3: Assigning a Ticket</h1>
+    <p>To assign an existing ticket to an assignee, follow these steps:</p>
+    <ol>
+      <li>Access the "ASSIGN-TICKET" section.</li>
+      <li>Complete the following fields:</li>
+      <ul>
+        <li>Ticket Code: Enter the ticket code or search for the ticket.</li>
+        <li>Assignee: Enter the assignee's details.</li>
+        <li>Status: Update the status of the ticket.</li>
+        <li>From Date and To Date: Select the date range for the ticket.</li>
+      </ul>
+      <li>Click "Submit" to assign the ticket.</li>
+    </ol>
+    
+    <h1>Process 4: Escalating a Ticket</h1>
+    <p>To escalate an existing ticket for further support, follow these steps:</p>
+    <ol>
+      <li>Access the "ESCALATE TICKET" section on the dashboard</li>
+      <li>Fill in the required details:</li>
+      <ul>
+        <li>Category: Select or search for the ticket category.</li>
+        <li>Priority: Choose the escalated ticket priority level.</li>
+        <li>Ticket Title: Provide a concise title for the escalated ticket.</li>
+        <li>Escalate Description: Describe why the ticket needs to be escalated.</li>
+      </ul>
+      <li>Click the "Submit" button to escalate the ticket.</li>
+    </ol>
+  </div>
+  <hr>
+  <div class="faqs" >
+    <h1 style="color: #3F51B5;">Frequently Asked Questions (FAQ)</h1>
+    <p>
+      Here are some frequently asked questions about E-Ticketing System:
+    </p>
+    <div class="accordion" id="faqAccordion">
+      <div *ngFor="let faq of faqs; let i = index" class="accordion-item">
+        <h2 class="accordion-header" id="heading{{ i }}">
+          <button class="accordion-button" type="button" (click)="toggleAnswer(i)" aria-expanded="true" aria-controls="collapse{{ i }}">
+            {{ faq.question }} <span class="addition-sign">{{ faq.showAnswer ? '-' : '+' }}</span>
+          </button>
+        </h2>
+        <div *ngIf="faq.showAnswer" id="collapse{{ i }}" class="accordion-collapse collapse show" aria-labelledby="heading{{ i }}" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            {{ faq.answer }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<hr>
+  <div class="contact-support">
+    <h1 style="color: #3F51B5;">Contacting Support</h1>
+    <p>If you need further assistance with [Software Name], please contact our support team at [insert contact information here].</p>
+  </div>
+  
+  
+  
+  
+</div>

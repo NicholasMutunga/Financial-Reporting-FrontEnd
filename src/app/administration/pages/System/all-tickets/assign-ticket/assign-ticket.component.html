@@ -1,0 +1,101 @@
+<mat-card>
+  <div class="row justify-content-center">
+    <div class="col-md-4 col-sm-12 d-flex justify-content-center">
+      <h2><strong>ASSIGN-TICKET</strong></h2>
+    </div>
+  </div>
+  <mat-divider></mat-divider>
+  <br>
+  <div class="container-fluid">
+    <form class="form" [formGroup]="formData" novalidate>
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+          <div class="form-group">
+            <div class="col-md-6 col-sm-12 form-column">
+              <label>ticket</label>
+            </div>
+            <div class="col-md-6 col-sm-12 form-column">
+              <input type="text" class="form-control" formControlName="ticketsCode"
+                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                maxlength="120" minlength="2" />
+              <mat-icon color="primary" (click)="ticketCodeLookup()">search</mat-icon>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <div class="form-group">
+            <div class="col-md-6 col-sm-12 form-column">
+              <label>assignee</label>
+            </div>
+            <div class="col-md-6 col-sm-12 form-column">
+              <input type="text" class="form-control" formControlName="assignee"
+                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                maxlength="120" minlength="2" />
+              <mat-icon color="primary" (click)="assigneeCodeLookup()">search</mat-icon>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <div class="form-group">
+            <div class="col-md-6 col-sm-12 form-column">
+              <label>status</label>
+            </div>
+            <div class="col-md-6 col-sm-12 form-column">
+              <input type="text" formControlName="status" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && formData.get('status').errors }"
+                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                maxlength="100" minlength="1" />
+              <mat-icon color="primary" (click)="statusCodeLookup()">search</mat-icon>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <div class="form-group">
+            <div class="col-md-6 col-sm-12 form-column">
+              <label for="">From Date</label>
+            </div>
+            <div class="col-md-6 col-sm-12 form-column">
+              <input
+              [matDatepicker]="fpicker"
+              formControlName="startDate"
+              class="form-control"
+            />
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="fpicker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #fpicker></mat-datepicker>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <div class="form-group">
+            <div class="col-md-6 col-sm-12 form-column">
+              <label for="">To Date</label>
+            </div>
+            <div class="col-md-6 col-sm-12 form-column">
+              <input
+              [matDatepicker]="tpicker"
+              formControlName="endDate"
+              class="form-control"
+            />
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="tpicker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #tpicker></mat-datepicker>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <hr>
+      <br>
+      <button mat-raised-button type="button" class="pull-left bg-secondary text-white" routerLink="/system">BACK</button>
+      <button class="pull-right bg-primary text-white color-blue" mat-raised-button (click)="onSubmit()">Submit</button>
+      <br>
+    </form>
+  </div>
+</mat-card>
+
+

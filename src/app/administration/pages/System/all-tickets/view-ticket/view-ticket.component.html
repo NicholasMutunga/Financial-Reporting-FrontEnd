@@ -1,0 +1,120 @@
+<mat-card>
+  <div class="row justify-content-center">
+    <div class="col-md-4 col-sm-12 d-flex justify-content-center">
+      <h2><strong>VIEW-TICKETS</strong></h2>
+    </div>
+  </div>
+  <mat-divider></mat-divider>
+  <br>
+  <div class="container-fluid">
+    <form class="form" [formGroup]="formData" (ngSubmit)="onSubmit()" #resetRequestsForm="ngForm" novalidate>
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+          <div class="form-group">
+            <div class="col-md-6 col-sm-12 form-column">
+              <label>Raised by</label>
+            </div>
+            <div class="col-md-6 col-sm-12 form-column">
+              <input type="text" class="form-control" formControlName="Raised by"
+                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                maxlength="120" minlength="2" />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <div class="form-group">
+            <div class="col-md-6 col-sm-12 form-column">
+              <label>title</label>
+            </div>
+            <div class="col-md-6 col-sm-12 form-column">
+              <input type="text" class="form-control" formControlName="title"/>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <div class="form-group">
+            <div class="col-md-6 col-sm-12 form-column">
+              <label>status</label>
+            </div>
+            <div class="col-md-6 col-sm-12 form-column">
+              <input type="text" formControlName="status" class="form-control"/>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <div class="form-group">
+            <div class="col-md-6 col-sm-12 form-column">
+              <label>email</label>
+            </div>
+            <div class="col-md-6 col-sm-12 form-column">
+              <input type="text" formControlName="email" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && formData.get('email').errors }"
+                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                maxlength="100" minlength="1" />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <div class="form-group">
+            <div class="col-md-6 col-sm-12 form-column">
+              <label>category</label>
+            </div>
+            <div class="col-md-6 col-sm-12 form-column">
+              <input type="text" formControlName="category" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && formData.get('category').errors }"
+                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                maxlength="100" minlength="1" />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <div class="form-group">
+            <div class="col-md-6 col-sm-12 form-column">
+              <label>contact</label>
+            </div>
+            <div class="col-md-6 col-sm-12 form-column">
+              <input type="text" formControlName="contact" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && formData.get('contact').errors }"
+                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                maxlength="100" minlength="1" />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <div class="form-group">
+            <div class="col-md-6 col-sm-12 form-column">
+              <label>comment</label>
+            </div>
+          </div>
+        <div class="col-md-12 col-sm-12 form-column">
+          <input type="text" formControlName="comment" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && formData.get('comment').errors }"
+            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+            maxlength="100" minlength="1" />
+        </div>
+      </div>
+
+     </div>
+       <div class="col-md-6 col-sm-12">
+         <div class="form-group">
+            <div class="col-md-6 col-sm-12 form-column">
+             <label>assignee</label>
+            </div>
+         <div class="col-md-6 col-sm-12 form-column">
+            <input type="text" formControlName="assignee" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && formData.get('assignee').errors }"
+              oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+              maxlength="100" minlength="1" />
+          </div>
+        </div>
+      </div>
+
+      <br>
+      <hr>
+      <br>
+      <button mat-raised-button type="button" class="pull-left bg-secondary text-white"(click)="goToDashboard()">BACK</button>
+      <button class="pull-right bg-primary text-white color-blue" mat-raised-button type="submit">Submit</button>
+      <br>
+    </form>
+  </div>
+</mat-card>

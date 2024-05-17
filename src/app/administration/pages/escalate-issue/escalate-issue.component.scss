@@ -1,0 +1,53 @@
+// Define variables for button colors
+$primary-color: blue;
+$secondary-color: red;
+
+// Define styles for buttons
+#submit-button {
+    background-color: $primary-color;
+    color: white;
+    border: none; // Remove any border
+    outline: none; // Remove default outline
+}
+
+#back-button {
+    background-color: $secondary-color;
+    color: white;
+}
+
+// Define grid layout styles
+#new-ticket-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+#new-ticket-form div {
+    display: flex;
+    align-items: center;
+}
+
+#new-ticket-form label {
+    flex: 1;
+    text-align: left;
+    margin-left: 96px;
+}
+
+#new-ticket-form select,
+#new-ticket-form input[type="text"],
+#new-ticket-form textarea,
+#new-ticket-form input[type="file"] {
+    flex: 1;
+}
+
+// Define styles for button container
+#button-container {
+    grid-column: span 2;
+    display: flex;
+    justify-content: space-between; // Ensure the buttons are spaced evenly
+    align-items: center; // Center the buttons vertically
+
+    .btn {
+        margin-left: 20px; // Add some space between buttons
+    }
+}

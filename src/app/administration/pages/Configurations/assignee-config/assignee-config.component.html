@@ -1,0 +1,135 @@
+<mat-card>
+    <div *ngIf="loading">
+      <p><small>Processing, please wait...</small></p>
+      <p>
+        <mat-progress-bar mode="query"></mat-progress-bar>
+      </p>
+    </div>
+    <mat-card-header class="breadcrumb">
+      <div>
+        <a routerLink="/system">Dashboard / </a>
+        <a routerLink="/system/assignee/maintenance">Assignee Maintenance / </a>Assignee
+      </div>
+    </mat-card-header>
+    <div class="row">
+      <div class="col-md-4 col-sm-12">
+        <div class="row">
+          <div class="col-md-6 col-sm-12">
+            <h4>Function:- <strong>{{this.fmData.function_type}}</strong> </h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8 col-sm-12 row" *ngIf="onShowResults">
+        <div class="row">
+          <div class="col-md-3 col-sm-12">
+            <h4>Posted BY:- <strong>{{this.results.postedBy}}</strong></h4>
+          </div>
+          <div class="col-md-3 col-sm-12">
+            <h4>Posted ON:- <strong>{{this.results.postedTime | date}}</strong></h4>
+          </div>
+          <div class="col-md-3 col-sm-12">
+            <h4>Verification:- <strong>{{this.results.verifiedFlag}}</strong></h4>
+          </div>
+          <div class="col-md-3 col-sm-12">
+            <h4>Verified BY:- <strong>{{this.results.verifiedBy}}</strong></h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <mat-divider></mat-divider>
+    <br>
+    <div class="container-fluid">
+      <form class="form" [formGroup]="formData" (ngSubmit)="onSubmit()" #resetRequestsForm="ngForm" novalidate>
+        <div class="row">
+          <div class="col-md-6 col-sm-12">
+            <div class="form-group">
+              <div class="col-md-6 col-sm-12 form-column ">
+                <label>Name<span class="text-danger" *ngIf="showWarning">*</span></label>
+              </div>
+              <div class="col-md-6 col-sm-12 form-column">
+                <input type="text" formControlName="names" class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && f.names.errors }"
+                  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                  maxlength="100" minlength="1" />
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <div class="form-group">
+              <div class="col-md-6 col-sm-12 form-column ">
+                <label>Designation<span class="text-danger" *ngIf="showWarning">*</span></label>
+              </div>
+              <div class="col-md-6 col-sm-12 form-column">
+                <input type="text" class="form-control" formControlName="designation"
+                [ngClass]="{ 'is-invalid': submitted && f.designation.errors }"
+                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                maxlength="120" minlength="2"/>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <div class="form-group">
+              <div class="col-md-6 col-sm-12 form-column ">
+                <label>Email<span class="text-danger" *ngIf="showWarning">*</span></label>
+              </div>
+              <div class="col-md-6 col-sm-12 form-column">
+                <input type="text" formControlName="email" class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+                  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                  maxlength="100" minlength="1" />
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <div class="form-group">
+              <div class="col-md-6 col-sm-12 form-column ">
+                <label>Id Number<span class="text-danger" *ngIf="showWarning">*</span></label>
+              </div>
+              <div class="col-md-6 col-sm-12 form-column">
+                <input type="text" class="form-control" formControlName="nationalId"
+                [ngClass]="{ 'is-invalid': submitted && f.nationalId.errors }"
+                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                maxlength="120" minlength="2"/>
+              </div>
+            </div>
+          </div>  
+          <div class="col-md-6 col-sm-12">
+            <div class="form-group">
+              <div class="col-md-6 col-sm-12 form-column ">
+                <label>Phone Number<span class="text-danger" *ngIf="showWarning">*</span></label>
+              </div>
+              <div class="col-md-6 col-sm-12 form-column">
+                <input type="text" formControlName="phoneNumber" class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && f.phoneNumber.errors }"
+                  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                  maxlength="100" minlength="1" />
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <div class="form-group">
+              <div class="col-md-6 col-sm-12 form-column ">
+                <label>Avaya<span class="text-danger" *ngIf="showWarning">*</span></label>
+              </div>
+              <div class="col-md-6 col-sm-12 form-column">
+                <input type="text" class="form-control" formControlName="avaya"
+                [ngClass]="{ 'is-invalid': submitted && f.avaya.errors }"
+                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                maxlength="120" minlength="2"/>
+              </div>
+            </div>
+          </div>         
+        </div>
+        <br>
+        <hr>
+        <br>
+        <button mat-raised-button type="submit" class="pull-left bg-secondary text-white"
+          routerLink="/system/assignee/maintenance">BACK</button>
+        <button [disabled]="submitting" *ngIf="!hideBtn" class="pull-right" mat-raised-button [color]="btnColor" type="submit">
+          <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>{{btnText}}
+        </button>
+        <br>
+      </form>
+    </div>
+  </mat-card>
+  

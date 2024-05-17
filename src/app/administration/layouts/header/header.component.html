@@ -1,0 +1,48 @@
+<div *ngIf="loading">
+  <p>
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  </p>
+</div><p class="mainheader">
+  <mat-toolbar color="blue" [ngStyle]="{'background-color': 'rgba(139, 0, 0, 1)' }" class="mat-elevation-z8">
+    <!-- <span> <img src="{{logolink}}" class="md-card-image" alt="logo"> </span> -->
+    <span class="example-spacer">{{this.sacconame}}</span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon"
+      [routerLink]="[ '/system/new/notification/allerts']" routerLinkActive="active" skipLocationChange="">
+      <mat-icon >notification_important</mat-icon>
+      {{this.totalRetailMembers+this.totalGroupMembers+this.totalAccounts+this.totalTransactions+this.totalSalaries + this.totalTransactions}}
+    </button>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button mat-stroked-button>
+      User ID: {{this.currentUser.id}}
+    </button>
+    <button mat-stroked-button>
+      Entity: {{this.currentUser.entityId}}
+    </button>
+    <button mat-stroked-button>
+      Branch: {{this.currentUser.solCode}}
+    </button>
+    <button mat-stroked-button>
+      System Date: {{systemDate| date: 'fullDate'}}
+    </button>
+    <button mat-button [matMenuTriggerFor]="menu" mat-icon-button
+      aria-label="Example icon button with a vertical three dot icon">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <mat-nav-list>
+        <a mat-list-item routerLinkActive="list-item-active" routerLink="/system/manage/user/profile">
+          <mat-icon color="primary">account_box</mat-icon>
+          Profile
+        </a>
+        <a mat-list-item routerLinkActive="list-item-active" (click)="logout()">
+          <mat-icon color="accent">exit_to_app</mat-icon>
+          Logout
+        </a>
+      </mat-nav-list>
+    </mat-menu>
+
+
+    <mat-icon class="screen" *ngIf="!isFullScreen" (click)="openFullscreen($event)">fullscreen</mat-icon>
+    <mat-icon class="screen" *ngIf="isFullScreen" (click)="closeFullscreen()">fullscreen_exit</mat-icon>
+  </mat-toolbar>
+</p>

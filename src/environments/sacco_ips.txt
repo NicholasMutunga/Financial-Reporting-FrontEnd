@@ -1,0 +1,60 @@
+use goodway_sacco_prod2;
+show tables;
+
+select*  from gl;
+select * from glsubhead where gl_code = 21;
+select * from missector;
+select * from missubsector;
+
+
+SELECT k.*, gl.gl_description, gl.classification
+FROM (
+    SELECT *, 
+           IF(credits1 - debits1 > 0, credits1 - debits1, 0) AS credits, 
+           IF(credits1 - debits1 < 0, debits1 - credits1, 0) AS debits  
+    FROM (
+        SELECT  
+            gl_subhead,
+            gl_description,
+            gl_code,
+            gl_subhead_description,
+            SUM(IF(part_tran_type = 'Credit', tran_amount, 0)) AS credits1, 
+            SUM(IF(part_tran_type = 'Debit', tran_amount, 0)) AS debits1 
+        FROM (
+            SELECT 
+                pt.tran_amount,
+                pt.acid,
+                pt.part_tran_type,
+                acsgl.gl_subhead,
+                acsgl.gl_code,
+                acsgl.gl_subhead_description 
+            FROM (
+                SELECT 
+                    tran_amount,
+                    transaction_header_id,
+                    acid,
+                    part_tran_type 
+                FROM part_tran
+            ) 
+            AS pt
+            JOIN dtd ON dtd.sn = pt.transaction_header_id 
+                    AND dtd.posted_flag = 'Y' 
+                    AND dtd.posted_time BETWEEN '2019-01-01' AND DATE_ADD('2023-01-01', INTERVAL 1 DAY)  
+            JOIN (
+                SELECT  
+                    ac.acid,
+                    ac.gl_subhead,
+                    subgl.gl_code,
+                    subgl.gl_subhead_description 
+                FROM  
+                    (SELECT gl_subhead_code, gl_code, gl_subhead_description FROM glsubhead) AS subgl
+                JOIN (SELECT acid, gl_subhead FROM accounts) AS ac ON ac.gl_subhead = subgl.gl_subhead_code
+            ) AS acsgl  ON acsgl.acid = pt.acid
+        ) AS k 
+        GROUP BY gl_subhead
+    ) AS k 
+    ORDER BY gl_code
+) AS k
+LEFT JOIN gl ON k.gl_code = gl.gl_code;
+
+

@@ -1,0 +1,133 @@
+<mat-nav-list>
+  <div class="profile-card">
+    <div class="row">
+      <div class="col-md-12">
+        <!-- <mat-icon style="font-size: 50px !important; height: 50px; width: 50px">account_circle</mat-icon> -->
+        <div class="header">
+          <p>
+            <small><b>Email:</b> {{ this.email }}</small>
+          </p>
+          <p>
+            <small><b>User :</b> {{ this.username }}</small>
+          </p>
+          <p>
+            <small><b>Role :</b>{{ this.role }}</small>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <small>Logged at:</small>
+    <small>IP address:</small> -->
+  <mat-divider></mat-divider>
+  <h2 matSubheader style="color: white !important;">Pages</h2>
+  <mat-accordion *ngIf="authorized" [ngStyle]="{'background-color': 'rgba(139, 0, 0, 1)'}" class="app-nav-accordion">
+    <a *ngIf="authorized" mat-list-item class="nav-title main-link" routerLinkActive="list-item-active"
+    routerLink="/system" skipLocationChange>
+    <mat-icon>dashboard</mat-icon>
+    Dashboard
+  </a>
+    <mat-expansion-panel [ngStyle]="{'background-color': 'rgba(139, 0, 0, 1)'}" class="mat-elevation-z0">
+      <mat-expansion-panel-header>
+        <mat-panel-title class="nav-title">
+          <mat-icon>settings</mat-icon>Configurations
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-nav-list [ngStyle]="{'background-color': 'rgba(139, 0, 0, 1)'}">
+        <!-- Global Params -->
+        <a mat-list-item routerLinkActive="list-item-active" routerLink="/system/priority/maintenance" 
+        skipLocationChange>
+          <mat-icon>subdirectory_arrow_right</mat-icon> Priority
+        </a>
+        <a mat-list-item routerLinkActive="list-item-active" routerLink="/system/category/maintenance"
+          skipLocationChange>
+          <mat-icon>subdirectory_arrow_right</mat-icon> Category
+        </a>
+        <a mat-list-item routerLinkActive="list-item-active" routerLink="/system/status/maintenance"
+        skipLocationChange>
+        <mat-icon>subdirectory_arrow_right</mat-icon> Status
+      </a>
+        <a mat-list-item routerLinkActive="list-item-active"
+          routerLink="/system/faq/maintenance" skipLocationChange>
+          <mat-icon>subdirectory_arrow_right</mat-icon> FAQS
+        </a>
+        <a mat-list-item routerLinkActive="list-item-active"
+          routerLink="/system/assignee/maintenance" skipLocationChange>
+          <mat-icon>subdirectory_arrow_right</mat-icon> Assignee
+        </a>
+      </mat-nav-list>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <a *ngIf="authorized" mat-list-item class="nav-title main-link" routerLinkActive="list-item-active"
+    routerLink="/system/assign-ticket" skipLocationChange>
+    <mat-icon>assignment_ind</mat-icon>
+    Assign Tickets
+  </a>
+  <a *ngIf="authorized" mat-list-item class="nav-title main-link" routerLinkActive="list-item-active"
+    routerLink="/system/my-ticket" skipLocationChange>
+    <mat-icon>assignment_ind</mat-icon>
+    My Tickets
+  </a>
+ <a *ngIf="authorized" mat-list-item class="nav-title main-link" routerLinkActive="list-item-active"
+    routerLink="/system/manage-ticket" skipLocationChange>
+    <mat-icon>assignment_ind</mat-icon>
+    Manage Tickets
+  </a>
+  <a *ngIf="authorized" mat-list-item class="nav-title main-link" routerLinkActive="list-item-active"
+  routerLink="/system/all-ticket" skipLocationChange>
+  <mat-icon>receipt</mat-icon>
+  All Tickets
+</a>
+  <a *ngIf="authorized" mat-list-item class="nav-title main-link" routerLinkActive="list-item-active"
+    routerLink="/system/user-guide" skipLocationChange>
+    <mat-icon>help</mat-icon>
+    User Guide
+  </a>
+
+  <a *ngIf="authorized" mat-list-item class="nav-title main-link" routerLinkActive="list-item-active"
+    routerLink="/system/survey" skipLocationChange>
+    <mat-icon>rate_review</mat-icon>
+
+    Surveys
+  </a>
+  <mat-accordion *ngIf="authorized" class="app-nav-accordion">
+    <mat-expansion-panel [ngStyle]="{'background-color': 'rgba(139, 0, 0, 1)'}" class="mat-elevation-z0">
+      <mat-expansion-panel-header>
+        <mat-panel-title class="nav-title">
+          <mat-icon>library_books</mat-icon>Reports
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-nav-list>
+        <a mat-list-item routerLinkActive="list-item-active" routerLink="/system/view-report" skipLocationChange="">
+          <mat-icon>subdirectory_arrow_right</mat-icon>View Reports
+        </a>
+      </mat-nav-list>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <mat-accordion *ngIf="authorized" class="app-nav-accordion">
+    <mat-expansion-panel [ngStyle]="{'background-color': 'rgba(139, 0, 0, 1)'}" class="mat-elevation-z0">
+      <mat-expansion-panel-header>
+        <mat-panel-title class="nav-title">
+          <mat-icon>security</mat-icon>
+          Access Management
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-nav-list>
+        <a mat-list-item routerLinkActive="list-item-active" routerLink="/system/roles/maintenance" skipLocationChange="">
+          <mat-icon>subdirectory_arrow_right</mat-icon>Roles
+        </a>
+        <a mat-list-item routerLinkActive="list-item-active" routerLink="/system/workclass/maintenance"
+          skipLocationChange="">
+          <mat-icon>subdirectory_arrow_right</mat-icon>Work Class
+        </a>
+        <a mat-list-item routerLinkActive="list-item-active" routerLink="/system/workclassactions/maintenance"
+          skipLocationChange>
+          <mat-icon>subdirectory_arrow_right</mat-icon>Actions
+        </a>
+        <a mat-list-item routerLinkActive="list-item-active" routerLink="/system/manage/user" skipLocationChange="">
+          <mat-icon>subdirectory_arrow_right</mat-icon>Users
+        </a>
+      </mat-nav-list>
+    </mat-expansion-panel>
+  </mat-accordion>
+</mat-nav-list>
