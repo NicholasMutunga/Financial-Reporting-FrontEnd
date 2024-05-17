@@ -17,7 +17,6 @@ import { HttpHeaderInterceptor } from './http.interceptor';
 import { MaterialModule } from './material.module';
 import { AutoLogoutService } from './administration/Service/AutoLogout/auto-logout.service';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-
 @NgModule({
   declarations: [
     AppComponent

@@ -24,7 +24,8 @@ const routes: Routes = [
         loadChildren: () => import('./administration/administration.module').then(m => m.AdministrationModule),
         canLoad: [CanLoadModuleGuard],
         data: { preload: false }
-      }
+      },
+     
     ]
   },
   { path: "**", component: PageError404Component }
