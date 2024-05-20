@@ -1,5 +1,6 @@
 .example-spacer {
   flex: 1 1 auto;
+  font-size: 32px;
 }
 
 .screen {
@@ -28,7 +29,7 @@ img {
 }
 
 .mat-toolbar {
-  background-color: darkblue;
+  // background-color: darkblue;
   color: white !important;
 }
 

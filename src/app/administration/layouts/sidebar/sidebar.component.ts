@@ -10,16 +10,16 @@ import { environment } from 'src/environments/environment';
 export class SidebarComponent implements OnInit {
   role: any;
   sideBarColor: any;
-  customSidebarBg="red";
+  customSidebarBg = "red";
   themeColors: any;
-  link = `${environment.reportsAPI}/api/v1/dynamic/css/customcss.json`
+  // link = `${environment.reportsAPI}/api/v1/dynamic/css/customcss.json`
   authorized = true;
   constructor(
     private tokenStorage: TokenStorageService,
     private tokenService: TokenStorageService
   ) {
     this.themeColors = this.tokenStorage.getTheme();
-    if(this.themeColors != null) {
+    if (this.themeColors != null) {
       console.log("log in sidebar");
       console.log(this.themeColors);
       this.customSidebarBg = this.themeColors.customSidebarBg;

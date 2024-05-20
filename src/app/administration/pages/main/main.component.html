@@ -1,79 +1,206 @@
 <section class="content">
-    <div class="content-block">   
-      <div class="row justify-content-center custom-margin">
-        <div class="col-auto">
-          <span><h1 class="">Get Quick Help</h1></span>
-        </div>
-      </div>  
-  
-      <!-- Cards -->
-      <div class="row justify-content-center">
-        <div class="col-lg-6 col-md-2 col-sm-2 custom-row">
-          <div class="card custom-shadow" routerLink="/system/report/maintenance">
-            <div class="card-body">
-                <mat-panel-title class="nav-title d-flex justify-content-center">
-                  <mat-icon>error</mat-icon>
-                  <span class="font-weight-bold ml-3">Report an issue</span>
-                </mat-panel-title>
-              <p class="text-black custom-paragraph">
-                Contact IT to support something that is broken 
-                <br>
-                e.g WIFI down/Network down/AUTO branch
-                <br>
-                Error/Finaccle show
-              </p>
+  <div class="content-block">
+
+    <!-- breadcrumb 
+         <app-breadcrumb [title]="' Report Preparation Dashboard'" [items]="['Home']" [active_item]="'Dashboard'">
+        </app-breadcrumb>
+      </div>  -->
+
+    <!-- <div class="row justify-content-center custom-margin">
+
+      <div class="col-auto">
+        <span>
+          <h1 class="">Get Quick Help</h1>
+        </span>
+      </div>
+    </div> -->
+
+
+    <div class="dashboardelements">
+
+      <!-- Widgets -->
+
+      <body>
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-lg-3 col-sm-6">
+                <div class="info-box7 bg-emtech order-info-box7"
+                  style="background-color: rgb(182, 38, 38); color: #fff;">
+                  <div class="info-box7-block">
+                    <h5 class="m-b-0">Pending Tasks</h5>
+                    <h2 class="text-end"><span class="float-start"></span></h2>
+                    <h4 class="m-b-20">2</h4>
+                    <div class="progress-bar">
+                      <mat-progress-bar mode="determinate" value="60"></mat-progress-bar>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-sm-6">
+                <div class="info-box7 bg-emtech order-info-box7"
+                  style="background-color: rgb(182, 38, 38); color: #fff;">
+                  <div class="info-box7-block">
+                    <h5 class="m-b-0">Ongoing Tasks</h5>
+                    <h2 class="text-end"><span class="float-start"></span></h2>
+                    <h4 class="m-b-20">1</h4>
+                    <div class="progress-bar">
+                      <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-sm-6">
+                <div class="info-box7 bg-emtech order-info-box7"
+                  style="background-color: rgb(182, 38, 38); color: #fff;">
+                  <div class="info-box7-block">
+                    <h5 class="m-b-0">Complete Tasks</h5>
+                    <h2 class="text-end"><span class="float-start"></span></h2>
+                    <h4 class="m-b-20">2</h4>
+                    <div class="progress-bar">
+                      <mat-progress-bar mode="determinate" value="100"></mat-progress-bar>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-sm-6">
+                <div class="info-box7 bg-emtech order-info-box7"
+                  style="background-color: rgb(182, 38, 38); color: #fff;">
+                  <div class="info-box7-block">
+                    <h5 class="m-b-0">Total Tasks</h5>
+                    <h2 class="text-end"><span class="float-start"></span></h2>
+                    <h4 class="m-b-20">5</h4>
+                    <div class="progress-bar">
+                      <mat-progress-bar mode="determinate" value="60"></mat-progress-bar>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-lg-6 col-md-2 col-sm-2 custom-row">
-          <div class="card custom-shadow" routerLink="/system/suggest-idea">
-            <div class="card-body">
-                <mat-panel-title class="nav-title d-flex justify-content-center">
-                  <mat-icon>lightbulb</mat-icon>
-                  <span class="font-weight-bold ml-3">Suggest an idea</span>
-                </mat-panel-title>
-                <p class="text-black custom-paragraph">
-                  Suggest new features and modules that 
-                <br>
-                can be added in the system to improve 
-                <br>
-                efficiency.
-              </p>
-            </div>
+      </body>
+      <!-- #END# Widgets -->
+
+
+
+      <!-- stats -->
+      <!-- <div class="analytics">
+      <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+        <div class="card" style="position: relative; height: 420px;width: 900px;">
+          <div class="header">
+            <h2>Task Performance</h2>
           </div>
-        </div>
-        <div class="col-lg-6 col-md-2 col-sm-2 custom-row">
-          <div class="card custom-shadow" routerLink="/system/escalate/maintenance">
-            <div class="card-body">
-                <mat-panel-title class="nav-title d-flex justify-content-center">
-                  <mat-icon>warning</mat-icon>
-                  <span class="font-weight-bold ml-3">Escalate an issue</span>
-                </mat-panel-title>
-              <p class="text-black custom-paragraph">
-                Escalate an issue for further support  
-            <br>
-            if a previous raised ticket has 
-            <br>
-            recommended an escalation.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6 col-md-2 col-sm-2 custom-row">
-          <div class="card custom-shadow" routerLink="/system/knowledge-base">
-            <div class="card-body">
-                <mat-panel-title class="nav-title d-flex justify-content-center">
-                  <mat-icon>library_books</mat-icon>
-                  <span class="font-weight-bold ml-3">Knowledge base</span>
-                </mat-panel-title>
-              <p class="text-center text-black custom-paragraph ">
-                Click here to learn more on the   
-            <br>
-            operationalization of the system.
-              </p>
+          <div class="body">
+            <div class="recent-report__chart">
+              <apx-chart [series]="lineChartOptions.series" [chart]="lineChartOptions.chart"
+                [xaxis]="lineChartOptions.xaxis" [stroke]="lineChartOptions.stroke" [colors]="lineChartOptions.colors"
+                [dataLabels]="lineChartOptions.dataLabels" [legend]="lineChartOptions.legend"
+                [tooltip]="lineChartOptions.tooltip" [markers]="lineChartOptions.markers" [grid]="lineChartOptions.grid"
+                [yaxis]="lineChartOptions.yaxis" [title]="lineChartOptions.title" [fill]="lineChartOptions.fill">
+              </apx-chart>
             </div>
           </div>
         </div>
       </div>
+
+      <div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+          <div class="card" style="height: 420px; width: 400px;">
+            <div class="card-body">
+              <div id="pie-chart">
+                <div class="header">
+                  <h2>Task Distribution</h2>
+                </div>
+    
+                <apx-chart [series]="pieChartOptions.series" [chart]="pieChartOptions.chart"
+                  [legend]="pieChartOptions.legend" [dataLabels]="pieChartOptions.dataLabels"
+                  [responsive]="pieChartOptions.responsive" [colors]="pieChartOptions.colors">
+                </apx-chart>
+    
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+      <!-- end ofstats -->
+
+      <!-- Cards -->
+      <!-- <div class="row justify-content-center">
+      <div class="col-lg-6 col-md-2 col-sm-2 custom-row">
+        <div class="card custom-shadow" routerLink="/system/report/maintenance">
+          <div class="card-body">
+            <mat-panel-title class="nav-title d-flex justify-content-center">
+              <mat-icon>error</mat-icon>
+              <span class="font-weight-bold ml-3">Report an issue</span>
+            </mat-panel-title>
+            <p class="text-black custom-paragraph">
+              Contact IT to support something that is broken
+              <br>
+              e.g WIFI down/Network down/AUTO branch
+              <br>
+              Error/Finaccle show
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-2 col-sm-2 custom-row">
+        <div class="card custom-shadow" routerLink="/system/suggest-idea">
+          <div class="card-body">
+            <mat-panel-title class="nav-title d-flex justify-content-center">
+              <mat-icon>lightbulb</mat-icon>
+              <span class="font-weight-bold ml-3">Suggest an idea</span>
+            </mat-panel-title>
+            <p class="text-black custom-paragraph">
+              Suggest new features and modules that
+              <br>
+              can be added in the system to improve
+              <br>
+              efficiency.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-2 col-sm-2 custom-row">
+        <div class="card custom-shadow" routerLink="/system/escalate/maintenance">
+          <div class="card-body">
+            <mat-panel-title class="nav-title d-flex justify-content-center">
+              <mat-icon>warning</mat-icon>
+              <span class="font-weight-bold ml-3">Escalate an issue</span>
+            </mat-panel-title>
+            <p class="text-black custom-paragraph">
+              Escalate an issue for further support
+              <br>
+              if a previous raised ticket has
+              <br>
+              recommended an escalation.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-2 col-sm-2 custom-row">
+        <div class="card custom-shadow" routerLink="/system/knowledge-base">
+          <div class="card-body">
+            <mat-panel-title class="nav-title d-flex justify-content-center">
+              <mat-icon>library_books</mat-icon>
+              <span class="font-weight-bold ml-3">Knowledge base</span>
+            </mat-panel-title>
+            <p class="text-center text-black custom-paragraph ">
+              Click here to learn more on the
+              <br>
+              operationalization of the system.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div> -->
+      <!-- end of cards -->
     </div>
-  </section>
+
+    <div class="row">
+    </div>
+
+  </div>
+</section>
