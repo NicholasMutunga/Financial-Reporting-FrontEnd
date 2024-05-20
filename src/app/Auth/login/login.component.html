@@ -1,53 +1,98 @@
-<div class="container">
-  <mat-card>
-    <div class="row">
-      <div class="left-info col-md-6 col-sm-12">
-        <div class="loginImage">
-          <img src="../../../../assets/authimage.png" class="img-responsive">
-        </div>
-      </div>
-      <div class="right-info col-md-6 col-sm-12">
-        <span *ngIf="loading"><mat-progress-bar mode="indeterminate"></mat-progress-bar></span>
-        <div class="card-header">
-          <div class="">
-            <span>
-              <h1>Sign-in</h1>
-            </span>
+<div class="authBackground">
+  <div class="row auth-main">
+    <div class="col form-box">
+      <div class="form-section">
+        <div class="auth-wrapper">
+          <div class="text-center">
+            <!-- Placeholder for Logo, uncomment if needed -->
+            <div>
+              <img src="/assets/Images/ABSA_Group_Limited_Logo.no background.png" width="160px" height="140px" class="px-2 mx-2" alt="" />
+            </div>
           </div>
-          <div class="profile-card">
-            <img src="{{logolink}}">
-          </div>
-        </div>
-        <div class="card-body">
-          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
 
-            <mat-form-field appearance="outline">
-              <mat-label>Enter your username</mat-label>
-              <input type="text" formControlName="username" matInput placeholder="e.g john">
-              <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-            </mat-form-field>
-
-            <mat-form-field appearance="outline">
-              <mat-label>Enter your password</mat-label>
-              <input formControlName="password" matInput [type]="hide ? 'password' : 'text'">
-              <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-                [attr.aria-pressed]="hide">
-                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-              </button>
-            </mat-form-field>
-
-            <button [disabled]="loading" class="btn btn-block btn-primary" type="submit">
-              Login
-            </button>
-            <br>
-            <br>
-            <a class="pull-left" routerLink="/sso/reset_password" skipLocationChange>Forgot Password?</a>
+          <!-- <img src="/assets/Images/ABSA_Group_Limited_Logo.no background.png" width="105px" height="105px" alt="Logo" /> -->
+          <strong>
+              <h2 class="mb-4">FINANCIAL REPORTING SYSTEM</h2>
+            </strong>
+          <p style="color: #423f3f">Enter credentials below:</p>
+          
+          <h3>Sign in</h3>
+          <form class="validate-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
+                <mat-form-field class="example-full-width" appearance="outline">
+                  <mat-label>Username</mat-label>
+                  <input matInput formControlName="username" />
+                  <mat-icon matSuffix>face</mat-icon>
+                  <mat-error *ngIf="loginForm.get('username').hasError('required')">
+                    Username is required
+                  </mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
+                <mat-form-field class="example-full-width" appearance="outline">
+                  <mat-label>Password</mat-label>
+                  <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" />
+                  <a class="show-pwd-icon" href="#" onClick="return false;" matSuffix (click)="hide = !hide"
+                    [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+                  </a>
+                  <mat-error *ngIf="loginForm.get('password').hasError('required')">
+                    Password is required
+                  </mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="badge badge-solid-green mb-3">
+              <a routerLink="/sso/reset_password" style="color: #000000">Forgot Password?</a>
+            </div>
+            <div *ngIf="error" class="alert alert-danger mt-1 mb-1">
+              {{ error }}
+            </div>
+            <div class="container-auth-form-btn">
+              <div style="text-align: center">
+                <button mat-raised-button color="primary" [class.auth-spinner]="loading" [disabled]="loading"
+                  class="auth-form-btn" [disabled]="!loginForm.valid" type="submit">
+                  Login
+                </button>
+              </div>
+            </div>
           </form>
+          <!-- <h6 class="social-login-title">OR</h6>
+          <ul class="list-unstyled social-icon mb-0 mt-3">
+            <li class="list-inline-item">
+              <a href="javascript:void(0)" class="rounded">
+                <i class="fab fa-google"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="javascript:void(0)" class="rounded flex-c-m">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="javascript:void(0)" class="rounded">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="javascript:void(0)" class="rounded">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </li>
+          </ul> -->
+        </div> 
+        <div class="badge badge-solid-green mt-3">
+          <small>
+            <a href="https://emtechhouse.co.ke" target="_blank" style="color: #000000">Powered by E&M Technology
+              House</a>
+          </small>
         </div>
       </div>
-      <small class="brand">
-        <a href="https://emtechhouse.co.ke" target="_blank">SSO - From E&M Technology House</a></small>
     </div>
-  </mat-card>
+  </div>
 </div>
+
 
