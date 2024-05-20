@@ -23,7 +23,8 @@ export class HeaderComponent implements OnInit {
   sacconame: string;
   customTitlebarBg = "red"
   themeColors: any;
-  logolink: string = `${environment.reportsAPI}/api/v1/dynamic/saccologo`;
+  // logolink: string = `${environment.reportsAPI}/api/v1/dynamic/saccologo`;
+  // logolink: string = "assets/images/absa_logo1-white.png";
   systemDate: any;
   totalTransactions = 0;
   data: any;
@@ -36,8 +37,8 @@ export class HeaderComponent implements OnInit {
   username: any;
   email: any;
   loading: boolean = false;
-  totalAccounts=0;
-  totalSalaries=0;
+  totalAccounts = 0;
+  totalSalaries = 0;
 
   constructor(
     private _snackBar: MatSnackBar,
@@ -54,7 +55,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.elem = document.documentElement;
     this.systemDate = new Date();
-    this.sacconame = "Ticketing System";
+    this.sacconame = "Financial Reporting System";
     this.themeColors = this.tokenStorage.getTheme();
     if (this.themeColors) {
       this.customTitlebarBg = this.themeColors.customTitlebarBg;
@@ -103,11 +104,11 @@ export class HeaderComponent implements OnInit {
   @HostListener('document:webkitfullscreenchange', ['$event'])
   @HostListener('document:mozfullscreenchange', ['$event'])
   @HostListener('document:MSFullscreenChange', ['$event'])
-  
+
   fullscreenmodes() {
     this.chkScreenMode();
   }
-  
+
   chkScreenMode() {
     if (document.fullscreenElement) {
       //fullscreen
@@ -120,7 +121,7 @@ export class HeaderComponent implements OnInit {
 
   openFullscreen(event: MouseEvent) {
     event.preventDefault();
-    
+
     if (this.elem.requestFullscreen) {
       this.elem.requestFullscreen();
     } else if (this.elem.mozRequestFullScreen) {

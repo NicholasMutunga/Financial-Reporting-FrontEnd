@@ -2,14 +2,18 @@
   <p>
     <mat-progress-bar mode="indeterminate"></mat-progress-bar>
   </p>
-</div><p class="mainheader">
+</div>
+<p class="mainheader">
   <mat-toolbar color="blue" [ngStyle]="{'background-color': 'rgba(139, 0, 0, 1)' }" class="mat-elevation-z8">
     <!-- <span> <img src="{{logolink}}" class="md-card-image" alt="logo"> </span> -->
     <span class="example-spacer">{{this.sacconame}}</span>
+    <!-- <img src="assets/images/absa_logo1-white.png" alt="Description" width="35px" height="35px"> -->
+    <!-- <span class="example-spacer">Financial Reporting System</span> -->
     <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon"
       [routerLink]="[ '/system/new/notification/allerts']" routerLinkActive="active" skipLocationChange="">
-      <mat-icon >notification_important</mat-icon>
-      {{this.totalRetailMembers+this.totalGroupMembers+this.totalAccounts+this.totalTransactions+this.totalSalaries + this.totalTransactions}}
+      <mat-icon>notification_important</mat-icon>
+      {{this.totalRetailMembers+this.totalGroupMembers+this.totalAccounts+this.totalTransactions+this.totalSalaries +
+      this.totalTransactions}}
     </button>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <button mat-stroked-button>

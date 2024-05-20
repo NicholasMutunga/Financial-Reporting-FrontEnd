@@ -1,23 +1,8 @@
-:host {
-  .mat-icon {
-    vertical-align: middle;
-    margin-right: 20px;
-  }
-
-  .profile-card {
-    text-align: center;
-    padding: 0 20px 20px 20px;
-
-    img {
-      width: 40% !important;
-      object-fit: cover;
-      // border-radius: 50%;
-    }
-  }
-}
-
-p, h2{
+p,
+h2,
+.matSubheader {
   color: white;
+  font-size: 20px;
 }
 
 .header {
@@ -26,7 +11,7 @@ p, h2{
 
 .mat-icon {
   color: white !important;
-  font-size: 15px !important;
+  font-size: 20px !important;
   padding-left: 0px !important;
   padding-right: 0px !important;
   margin: 0px !important;
@@ -36,36 +21,79 @@ p, h2{
 a,
 .mat-panel-title {
   color: white !important;
-  font-size: 12px !important;
+  font-size: 15px !important;
+  font-weight: 450 !important;
   height: min-content !important;
+  flex: block !important;
+  letter-spacing: normal !important;
+  justify-content: space-around;
+}
+
+.nav-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 20px;
+  background-color: rgb(63, 60, 60);
+}
+
+.nav-title:active {
+  color: white !important;
+  font-size: 18px !important;
+  height: min-content !important;
+  background: transparent !important;
   flex: block !important;
   font-weight: 450 !important;
   letter-spacing: normal !important;
 }
 
-.mat-panel-title {
-  font-size: 12px !important;
-  height: min-content !important;
-  flex: block !important;
-  font-weight: 450 !important;
-  letter-spacing: normal !important;
-}
+// .nav-title:hover {
+//   background-color: rgba(139, 0, 0, 1);
+//   width: 10px;
+// }
 
-.mat-drawer-container {
+.mat-elevation-z0 {
+  background: rgb(63, 60, 60) !important;
   color: white !important;
 }
 
-.nav-title {
-  color: white !important;
-  font-size: 13px !important;
-  height: min-content !important;
-  background: transparent  !important;;
-  flex: block !important;
-  font-weight: 450 !important;
-  letter-spacing: normal !important;
-}
 
-.mat-drawer{
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.mat-drawer {
   color: white !important;
 }
 
@@ -73,7 +101,9 @@ a,
 //   color: orange !important;
 // }
 
-.mat-expansion-panel-header-description, .mat-expansion-indicator::after, .mat-expansion-indicator {
+.mat-expansion-panel-header-description,
+.mat-expansion-indicator::after,
+.mat-expansion-indicator {
   color: white !important;
 }
 
@@ -89,7 +119,7 @@ mat-menu {
 a {
   padding-bottom: 2px !important;
   margin-bottom: 1px !important;
-  font-size: 16px !important;
+  font-size: 20px !important;
   font-weight: 450 !important;
   letter-spacing: normal !important;
 }
@@ -101,6 +131,7 @@ a {
 
 .app-nav-accordion {
   color: azure;
+
   .mat-expansion-panel {
     background-color: blue;
     border-radius: 0px !important;
