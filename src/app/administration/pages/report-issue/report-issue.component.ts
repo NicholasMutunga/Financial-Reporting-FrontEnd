@@ -17,13 +17,15 @@ import { CategoryLookupComponent } from '../lookups/category-lookup/category-loo
 export class ReportIssueComponent implements OnInit, OnDestroy {
   loading = false;
   lookupData: any;
-  category: any;
+
+  subsidiaryCode: any;
   priority: any;
   function_type: string;
   selectedFile: File | null = null; 
-  ticketsCode: any;
   error: any;
+  companyName: any;
   results: any;
+  entityId: any;
   fmData: any;
   submitted = false;
   onShowResults = false;
@@ -43,7 +45,7 @@ export class ReportIssueComponent implements OnInit, OnDestroy {
   ) {
     this.fmData = this.router.getCurrentNavigation().extras.queryParams.formData;
     this.function_type = this.fmData.function_type;
-    this.ticketsCode = this.fmData.ticketsCode;
+    this.subsidiaryCode = this.fmData.subsidiaryCode;
   }
 
   ngOnInit() {
@@ -55,11 +57,9 @@ export class ReportIssueComponent implements OnInit, OnDestroy {
   }
 
   formData = this.fb.group({
-    title: ['', Validators.required],
-    ticketsCode: ['', Validators.required],
-    description: ['', Validators.required],
-    category: ['', Validators.required],
-    priority: ['', Validators.required],
+    subsidiaryCode: ['', Validators.required],
+    entityId: ['', Validators.required],
+    companyName: ['', Validators.required],
   });
   
   disabledFormControll() {
@@ -79,11 +79,10 @@ export class ReportIssueComponent implements OnInit, OnDestroy {
             this.loading = false;
             this.results = res.entity;
             this.formData = this.fb.group({
-              ticketsCode: [this.ticketsCode],
-              title: [this.results.title],
-              description: [this.results.description],
-              category: [this.results.category],
-              priority: [this.results.priority],
+              subsidiaryCode: [this.subsidiaryCode],
+              entityId: ['', Validators.required],
+              companyName: ['', Validators.required],
+
             });
           } else {
             this.loading = false;
@@ -105,11 +104,10 @@ export class ReportIssueComponent implements OnInit, OnDestroy {
   getPage() {
     if (this.function_type == "ADD") {
       this.formData = this.fb.group({
-        ticketsCode: [this.ticketsCode],
-        title: ['', Validators.required],
-        description: ['', Validators.required],
-        category: ['', Validators.required],
-        priority: ['', Validators.required],
+        subsidiaryCode: [this.subsidiaryCode],
+        companyName: ['', Validators.required],
+        entityId: ['', Validators.required],
+
       });
       this.btnColor = 'primary';
       this.btnText = 'SUBMIT';
@@ -176,27 +174,27 @@ export class ReportIssueComponent implements OnInit, OnDestroy {
     }
   }
 
-  priorityCodeLookup(): void {
-    const dialogRef = this.dialog.open(PriorityLookupComponent, {
-      width: "40%",
-      autoFocus: false,
-      maxHeight: '90vh'
-    });
-    dialogRef.afterClosed().subscribe(result => {
-      this.lookupData = result.data;
-      this.formData.controls.priority.setValue(this.lookupData.title);
-    });
-  }
+  // priorityCodeLookup(): void {
+  //   const dialogRef = this.dialog.open(PriorityLookupComponent, {
+  //     width: "40%",
+  //     autoFocus: false,
+  //     maxHeight: '90vh'
+  //   });
+  //   dialogRef.afterClosed().subscribe(result => {
+  //     this.lookupData = result.data;
+  //     this.formData.controls.subsidiaryCode.setValue(this.lookupData.title);
+  //   });
+  // }
 
-  categoryCodeLookup(): void {
-    const dialogRef = this.dialog.open(CategoryLookupComponent, {
-      width: "40%",
-      autoFocus: false,
-      maxHeight: '90vh'
-    });
-    dialogRef.afterClosed().subscribe(result => {
-      this.lookupData = result.data;
-      this.formData.controls.category.setValue(this.lookupData.title);
-    });
-  }
+  // categoryCodeLookup(): void {
+  //   const dialogRef = this.dialog.open(CategoryLookupComponent, {
+  //     width: "40%",
+  //     autoFocus: false,
+  //     maxHeight: '90vh'
+  //   });
+  //   dialogRef.afterClosed().subscribe(result => {
+  //     this.lookupData = result.data;
+  //     this.formData.controls.category.setValue(this.lookupData.title);
+  //   });
+  // }
 }

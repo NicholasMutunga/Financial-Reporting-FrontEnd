@@ -13,7 +13,7 @@
   </mat-card-header>
   <div class="row justify-content-center">
     <div class="col-md-4 col-sm-12 d-flex justify-content-center">
-      <h2> <strong>RAISE A NEW TICKET</strong></h2>
+      <h2> <strong>ADD SUBSIDIARY</strong></h2>
     </div>
   </div>
   <mat-divider></mat-divider>
@@ -24,12 +24,13 @@
         <div class="col-md-6 col-sm-12">
           <div class="form-group">
             <div class="col-md-6 col-sm-12 form-column ">
-              <label>Category</label>
+              <label>COMPANY NAME</label>
             </div>
             <div class="col-md-6 col-sm-12 form-column">
-              <input type="text" formControlName="category" class="form-control"
-                [ngClass]="{ 'is-invalid': submitted && f.category.errors }"/>
-              <mat-icon color="primary" (click)="categoryCodeLookup()">search</mat-icon>
+              <input type="text" formControlName="companyName" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.companyName.errors }"
+                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                maxlength="1000" minlength="2">
             </div>
             
           </div>
@@ -39,18 +40,19 @@
         <div class="col-md-6 col-sm-12">
           <div class="form-group">
             <div class="col-md-6 col-sm-12 form-column ">
-              <label>Priority</label>
+              <label>ENTITY ID</label>
             </div>
             <div class="col-md-6 col-sm-12 form-column">
-              <input type="text" formControlName="priority" class="form-control"
-                [ngClass]="{ 'is-invalid': submitted && f.priority.errors }" />
-              <mat-icon color="primary" (click)="priorityCodeLookup()">search</mat-icon>
+              <input type="text" formControlName="entityId" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.entityId.errors }"
+              oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+              maxlength="1000" minlength="2">
             </div>
             
           </div>
         </div>
 
-        <div class="col-md-6 col-sm-12">
+        <!-- <div class="col-md-6 col-sm-12">
           <div class="form-group">
             <div class="col-md-6 col-sm-12 form-column ">
               <label>Ticket Title</label>
@@ -62,8 +64,8 @@
                 maxlength="1000" minlength="2">
             </div>
           </div>
-        </div>
-        <div class="col-md-6 col-sm-12">
+        </div> -->
+        <!-- <div class="col-md-6 col-sm-12">
           <div class="form-group">
             <div class="col-md-6 col-sm-12 form-column ">
               <label>Ticket Description</label>
@@ -75,7 +77,7 @@
                 maxlength="120" minlength="2"></textarea>
             </div>
           </div>
-        </div>
+        </div> -->
         <!-- <div class="col-md-6 col-sm-12">
           <div class="form-group">
             <div class="col-md-6 col-sm-12 form-column ">

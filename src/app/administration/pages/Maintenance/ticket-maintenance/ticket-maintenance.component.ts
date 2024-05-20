@@ -16,7 +16,7 @@ import { ReportIssueService } from '../../report-issue/report-issue.service';
 })
 export class TicketMaintenanceComponent implements OnInit, OnDestroy {
   lookupData: any;
-  ticketsCode: any;
+  subsidiaryCode: any;
   priorityDescription: any;
   loading = false;
   submitted = false;
@@ -44,11 +44,11 @@ export class TicketMaintenanceComponent implements OnInit, OnDestroy {
   }
   formData = this.fb.group({
     function_type: ['', [Validators.required]],
-    ticketsCode: ['', [Validators.required]],
+    subsidiaryCode: ['', [Validators.required]],
   });
   ngOnInit() {
     this.lookupData = {};
-    this.randomCode = "TI" + Math.floor(Math.random() * (999 - 1));
+    this.randomCode = "SU" + Math.floor(Math.random() * (9999 - 1));
   }
   ngOnDestroy() {
     this.destroy$.next(true);
@@ -59,11 +59,11 @@ export class TicketMaintenanceComponent implements OnInit, OnDestroy {
     if (this.function_type == 'ADD') {
       this.onShowSearchIcon = false;
       this.onsShowCode = true;
-      this.formData.controls.ticketsCode.setValue(this.randomCode);
+      this.formData.controls.subsidiaryCode.setValue(this.randomCode);
     } else if (this.function_type !== 'ADD') {
       this.onShowSearchIcon = true;
       this.onsShowCode = true;
-      this.formData.controls.ticketsCode.setValue("");
+      this.formData.controls.subsidiaryCode.setValue("");
     }
   }
   get f() { return this.formData.controls; }
@@ -73,9 +73,9 @@ export class TicketMaintenanceComponent implements OnInit, OnDestroy {
     this.submitted = true;
     this.submitting = true;
     if (this.formData.valid) {
-      this.ticketsCode = this.formData.controls.ticketsCode.value;
+      this.subsidiaryCode = this.formData.controls.subsidiaryCode.value;
       if (this.function_type == 'ADD') {
-        this.ticketAPI.getCode(this.ticketsCode).pipe(takeUntil(this.destroy$)).subscribe(
+        this.ticketAPI.getCode(this.subsidiaryCode).pipe(takeUntil(this.destroy$)).subscribe(
           (data) => {
             if (data.statusCode === 404) {
               this.loading = false;
@@ -105,7 +105,7 @@ export class TicketMaintenanceComponent implements OnInit, OnDestroy {
       this.submitting = false;
       this.notificationAPI.alertWarning("TICKET FUNCTION TYPE IS INVALID");
     }
-    else if (this.formData.controls.ticketsCode.value == "") {
+    else if (this.formData.controls.subsidiaryCode.value == "") {
       this.loading = false;
       this.submitted = true;
       this.submitting = false;
@@ -127,9 +127,9 @@ export class TicketMaintenanceComponent implements OnInit, OnDestroy {
     dialogRef.afterClosed().subscribe(result => {
       this.lookupData = result.data;
       console.log(this.lookupData);
-      this.ticketsCode = this.lookupData.ticketsCode;
+      this.subsidiaryCode = this.lookupData.ticketsCode;
       this.priorityDescription = this.lookupData.priorityDescription;
-      this.formData.controls.ticketsCode.setValue(this.ticketsCode);
+      this.formData.controls.subsidiaryCode.setValue(this.subsidiaryCode);
     });
   }
 }

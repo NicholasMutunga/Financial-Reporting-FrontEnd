@@ -32,11 +32,11 @@
         <div class="col-md-6 col-sm-12" *ngIf="onsShowCode">
           <div class="form-group">
             <div class="col-md-6 col-sm-12 form-column ">
-              <label class="start pull-left">Ticket Code<span class="text-danger">*</span></label>
+              <label class="start pull-left">Subsidiary Code<span class="text-danger">*</span></label>
             </div>
             <div class="col-md-6 col-sm-12 form-column">
-              <input type="text" formControlName="ticketsCode" class="form-control"
-                [ngClass]="{ 'is-invalid': submitted && f.ticketsCode.errors }"
+              <input type="text" formControlName="subsidiaryCode" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.subsidiaryCode.errors }"
                 oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                 maxlength="6" minlength="3" />
               <mat-icon color="primary" (click)="ticketsCodeLookup()" *ngIf="onShowSearchIcon">search</mat-icon>

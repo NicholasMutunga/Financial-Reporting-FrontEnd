@@ -11,7 +11,7 @@ export class ReportIssueService {
 
   headers = new HttpHeaders().set('Content-Type', 'application/json');
   constructor(private http: HttpClient) {}
-  private baseURL = `${environment.userAPI}/system/ticketing/tickets/`;
+  private baseURL = `${environment.userAPI}/api/v1/subsidiary/`;
 
   create(data: any): Observable<any> {
     let API_URL = `${this.baseURL}add`;
@@ -47,7 +47,7 @@ export class ReportIssueService {
   }
 
   getCode(code: any) {
-    let API_URL = `${this.baseURL}find/by/ticket/${code}`;
+    let API_URL = `${this.baseURL}find/by/subsidiary/${code}`;
     return this.http.get(API_URL, { headers: this.headers, withCredentials: false }).pipe(
       map((res: any) => {
         console.log(res)
