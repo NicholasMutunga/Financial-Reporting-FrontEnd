@@ -21,24 +21,24 @@ h2,
 a,
 .mat-panel-title {
   color: white !important;
-  font-size: 15px !important;
+  font-size: 20px !important;
   font-weight: 450 !important;
   height: min-content !important;
   flex: block !important;
   letter-spacing: normal !important;
-  justify-content: space-around;
+  // justify-content: space-evenly;
 }
 
 .nav-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
   height: 100vh;
-  padding: 20px;
+  padding: 5px;
   background-color: rgb(63, 60, 60);
 }
 
-.nav-title:active {
+.nav-title {
   color: white !important;
   font-size: 18px !important;
   height: min-content !important;
@@ -48,50 +48,14 @@ a,
   letter-spacing: normal !important;
 }
 
-// .nav-title:hover {
-//   background-color: rgba(139, 0, 0, 1);
-//   width: 10px;
-// }
-
 .mat-elevation-z0 {
   background: rgb(63, 60, 60) !important;
   color: white !important;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.mat-nav-list {
+  font-size: 20px;
+}
 
 .mat-drawer {
   color: white !important;
