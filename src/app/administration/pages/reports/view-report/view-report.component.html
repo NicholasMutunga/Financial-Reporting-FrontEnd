@@ -1,5 +1,12 @@
 <div class="card container-fluid">
     <div class="card-body text-center">
+        <mat-card-header class="breadcrumb">
+            <div>
+              <a routerLink="/system">Dashboard / </a>
+              <a routerLink="/system/reports"></a>Financial Reports 
+            </div>
+        </mat-card-header>
+        <mat-divider></mat-divider>
         <!-- <div>
             <h2 class="card-title">Financial Reports</h2>
             <mat-form-field appearance="fill" *ngIf="!displayReport">
@@ -63,32 +70,6 @@
     </div>
 </mat-tab>
 
-<mat-tab label="Cashflow Statement">
-    <div class="generate-buttons">
-        <button mat-raised-button color="primary" (click)=" generateCashflowStatement()">Generate Cashflow Statement</button>
-    </div>
-
-    <div class="scrollable-table">
-        <mat-table [dataSource]="dataSource">
-          <ng-container *ngFor="let col of cashflowdisplayedColumns" [matColumnDef]="col">
-            <mat-header-cell *matHeaderCellDef>{{col}}</mat-header-cell>
-            <mat-cell *matCellDef="let element">{{element[col]}}</mat-cell>
-          </ng-container>
-          <mat-header-row *matHeaderRowDef="cashflowdisplayedColumns"></mat-header-row>
-          <mat-row *matRowDef="let row; columns: cashflowdisplayedColumns;"></mat-row>
-        </mat-table>
-
-        <div class="scrollbar">
-          <!-- Native browser scrollbar will appear here -->
-        </div>
-      </div>
-      <div class="col-md-12 d-flex justify-content-end align-items-center">
-        <button class="btn btn-primary" type="download" mat-raised-button color="primary" 
-            (click)="downloadCashflowStatement()"> 
-            <mat-icon>download</mat-icon>Download</button>
-    </div>
-</mat-tab>
-
         <mat-tab label="Balance sheet">
             <div class="generate-buttons">
                 <button mat-raised-button color="primary" (click)=" generateBalanceSheet()">Generate Balance Sheet</button>
@@ -111,6 +92,32 @@
               <div class="col-md-12 d-flex justify-content-end align-items-center">
                 <button class="btn btn-primary" type="download" mat-raised-button color="primary" 
                     (click)="downloadBalanceSheet()">  
+                    <mat-icon>download</mat-icon>Download</button>
+            </div>
+        </mat-tab>
+
+        <mat-tab label="Cashflow Statement">
+            <div class="generate-buttons">
+                <button mat-raised-button color="primary" (click)=" generateCashflowStatement()">Generate Cashflow Statement</button>
+            </div>
+        
+            <div class="scrollable-table">
+                <mat-table [dataSource]="dataSource">
+                  <ng-container *ngFor="let col of cashflowdisplayedColumns" [matColumnDef]="col">
+                    <mat-header-cell *matHeaderCellDef>{{col}}</mat-header-cell>
+                    <mat-cell *matCellDef="let element">{{element[col]}}</mat-cell>
+                  </ng-container>
+                  <mat-header-row *matHeaderRowDef="cashflowdisplayedColumns"></mat-header-row>
+                  <mat-row *matRowDef="let row; columns: cashflowdisplayedColumns;"></mat-row>
+                </mat-table>
+        
+                <div class="scrollbar">
+                  <!-- Native browser scrollbar will appear here -->
+                </div>
+              </div>
+              <div class="col-md-12 d-flex justify-content-end align-items-center">
+                <button class="btn btn-primary" type="download" mat-raised-button color="primary" 
+                    (click)="downloadCashflowStatement()"> 
                     <mat-icon>download</mat-icon>Download</button>
             </div>
         </mat-tab>
