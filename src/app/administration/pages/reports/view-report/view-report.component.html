@@ -36,8 +36,7 @@
     </div>
 </div> -->
 
-<mat-tab-group animationDuration="0ms">
-    
+<mat-tab-group animationDuration="0ms">    
     <mat-tab label="Income Statement">
         <div class="generate-buttons">
         <button mat-raised-button color="primary" (click)=" generateIncomeStatement()">Generate Income Statement</button>
@@ -49,13 +48,6 @@
             <mat-header-cell *matHeaderCellDef>{{col}}</mat-header-cell>
             <mat-cell *matCellDef="let element">{{element[col]}}</mat-cell>
           </ng-container>
-          <ng-template #actionsCell>
-              <!-- <button  mat-icon-button color="primary" (click)="$event.stopPropagation()"
-                (click)="(row)" class="tbl-action-btn">
-                <app-feather-icons [icon]="'eye'" [class]="'tbl-fav-eye'"
-                  matTooltip="View"></app-feather-icons>
-              </button> -->
-         </ng-template>
           <mat-header-row *matHeaderRowDef="incomedisplayedColumns"></mat-header-row>
           <mat-row *matRowDef="let row; columns: incomedisplayedColumns;"></mat-row>
         </mat-table>
@@ -63,18 +55,39 @@
         <div class="scrollbar">
           <!-- Native browser scrollbar will appear here -->
         </div>
-        <mat-paginator [pageSizeOptions]="[5, 10, 20]" 
-          showFirstLastButtons aria-label="Select page"
-          [pageSize]="pageSize" [pageIndex]="pageIndex">
-        </mat-paginator>
       </div>
+      <div class="col-md-12 d-flex justify-content-end align-items-center">
+        <button class="btn btn-primary" type="download" mat-raised-button color="primary" 
+            (click)="downloadIncomeStatement()">  
+            <mat-icon>download</mat-icon>Download</button>
+    </div>
 </mat-tab>
 
 <mat-tab label="Cashflow Statement">
     <div class="generate-buttons">
         <button mat-raised-button color="primary" (click)=" generateCashflowStatement()">Generate Cashflow Statement</button>
     </div>
-        </mat-tab>
+
+    <div class="scrollable-table">
+        <mat-table [dataSource]="dataSource">
+          <ng-container *ngFor="let col of cashflowdisplayedColumns" [matColumnDef]="col">
+            <mat-header-cell *matHeaderCellDef>{{col}}</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element[col]}}</mat-cell>
+          </ng-container>
+          <mat-header-row *matHeaderRowDef="cashflowdisplayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: cashflowdisplayedColumns;"></mat-row>
+        </mat-table>
+
+        <div class="scrollbar">
+          <!-- Native browser scrollbar will appear here -->
+        </div>
+      </div>
+      <div class="col-md-12 d-flex justify-content-end align-items-center">
+        <button class="btn btn-primary" type="download" mat-raised-button color="primary" 
+            (click)="downloadCashflowStatement()"> 
+            <mat-icon>download</mat-icon>Download</button>
+    </div>
+</mat-tab>
 
         <mat-tab label="Balance sheet">
             <div class="generate-buttons">
@@ -87,13 +100,6 @@
                     <mat-header-cell *matHeaderCellDef>{{col}}</mat-header-cell>
                     <mat-cell *matCellDef="let element">{{element[col]}}</mat-cell>
                   </ng-container>
-                  <ng-template #actionsCell>
-                      <!-- <button  mat-icon-button color="primary" (click)="$event.stopPropagation()"
-                        (click)="(row)" class="tbl-action-btn">
-                        <app-feather-icons [icon]="'eye'" [class]="'tbl-fav-eye'"
-                          matTooltip="View"></app-feather-icons>
-                      </button> -->
-                 </ng-template>
                   <mat-header-row *matHeaderRowDef="balancedisplayedColumns"></mat-header-row>
                   <mat-row *matRowDef="let row; columns: balancedisplayedColumns;"></mat-row>
                 </mat-table>
@@ -101,20 +107,40 @@
                 <div class="scrollbar">
                   <!-- Native browser scrollbar will appear here -->
                 </div>
-                <mat-paginator [pageSizeOptions]="[5, 10, 20]" 
-                  showFirstLastButtons aria-label="Select page"
-                  [pageSize]="pageSize" [pageIndex]="pageIndex">
-                </mat-paginator>
               </div>
+              <div class="col-md-12 d-flex justify-content-end align-items-center">
+                <button class="btn btn-primary" type="download" mat-raised-button color="primary" 
+                    (click)="downloadBalanceSheet()">  
+                    <mat-icon>download</mat-icon>Download</button>
+            </div>
         </mat-tab>
+
         <mat-tab label="Statement of Changes in Equity">
             <div class="generate-buttons">
                 <button mat-raised-button color="primary" (click)=" generateStatementofequity()">Generate Statement of Equity</button>
             </div>
-        </mat-tab>
-       
-</mat-tab-group>
 
+            <div class="scrollable-table">
+                <mat-table [dataSource]="dataSource">
+                  <ng-container *ngFor="let col of equitydisplayedColumns" [matColumnDef]="col">
+                    <mat-header-cell *matHeaderCellDef>{{col}}</mat-header-cell>
+                    <mat-cell *matCellDef="let element">{{element[col]}}</mat-cell>
+                  </ng-container>
+                  <mat-header-row *matHeaderRowDef="equitydisplayedColumns"></mat-header-row>
+                  <mat-row *matRowDef="let row; columns: equitydisplayedColumns;"></mat-row>
+                </mat-table>
+        
+                <div class="scrollbar">
+                  <!-- Native browser scrollbar will appear here -->
+                </div>
+              </div>
+              <div class="col-md-12 d-flex justify-content-end align-items-center">
+                <button class="btn btn-primary" type="download" mat-raised-button color="primary" 
+                    (click)="downloadEquityStatement()">  
+                    <mat-icon>download</mat-icon>Download</button>
+            </div>
+        </mat-tab>       
+</mat-tab-group>
 </div>
 </div>
       

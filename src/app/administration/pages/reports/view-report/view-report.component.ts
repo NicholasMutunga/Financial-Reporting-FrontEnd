@@ -58,10 +58,10 @@ export class ViewReportComponent implements OnInit {
   ChartsOfAccounts: any;
 
   dataSource: MatTableDataSource<any> = new MatTableDataSource<any>([]);
-  pageIndex: number = 0;
-  pageSize: number = 20;
-  incomedisplayedColumns: string[] = ['description', 'notes', '2024-amount(Ksh)','2023-amount(Ksh)'];
-  balancedisplayedColumns: string[] = ['description', '2024-amount(Ksh)','2023-amount(Ksh)']
+  incomedisplayedColumns: string[] = ['Description', 'Notes', '2024-Amount(Ksh)','2023-Amount(Ksh)'];
+  balancedisplayedColumns: string[] = ['Description', '2024-Amount(Ksh)','2023-Amount(Ksh)'];
+  cashflowdisplayedColumns: string[] = ['Description', '2024-Amount(Ksh)','2023-Amount(Ksh)'];
+  equitydisplayedColumns: string[] = ['Item', 'Amount'];
 
   constructor(
     private dialog: MatDialog,
@@ -75,8 +75,22 @@ export class ViewReportComponent implements OnInit {
 
 
   generateIncomeStatement(){
-   //awaiting API logics
-  }
+  
+  //  this.incomeStatementService.getIncomeStatement().subscribe(data => {
+  //   // Process the data as needed
+  //   console.log(data);
+
+  //   // Trigger the download
+  //   const blob = new Blob([JSON.stringify(data)], {type: 'application/json'});
+  //   const url = window.URL.createObjectURL(blob);
+  //   const link = document.createElement('a');
+  //   link.href = url;
+  //   link.setAttribute('download', 'income_statement.json');
+  //   document.body.appendChild(link);
+  //   link.click();
+  //   document.body.removeChild(link);
+  // });
+}
 
   generateBalanceSheet(){
  //awaiting API logics
@@ -88,6 +102,23 @@ export class ViewReportComponent implements OnInit {
 
   generateCashflowStatement(){
     //awaiting API logics
+  }
+
+  //logics for Download actions
+  downloadIncomeStatement(){
+  //awaiting logics
+  }
+
+  downloadBalanceSheet(){
+    //awaiting logics
+  }
+
+  downloadCashflowStatement(){
+    //awaiting logics
+  }
+
+  downloadEquityStatement(){
+    //awaiting logics
   }
 
 }
