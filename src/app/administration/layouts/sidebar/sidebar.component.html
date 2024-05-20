@@ -36,7 +36,7 @@
       </mat-expansion-panel-header>
       <mat-nav-list [ngStyle]="{'font-size':'16px'}">
         <!-- Global Params -->
-        <a mat-list-item routerLinkActive="list-item-active" routerLink="/system/priority/maintenance"
+        <a mat-list-item routerLinkActive="list-item-active" routerLink="/system/report/maintenance"
           skipLocationChange>
           <mat-icon>subdirectory_arrow_right</mat-icon> Subsidiary
         </a>
@@ -59,10 +59,10 @@
     </mat-expansion-panel>
   </mat-accordion>
   <a *ngIf="authorized" mat-list-item class="nav-title main-link" routerLinkActive="list-item-active"
-    routerLink="/system/assign-ticket" skipLocationChange>
-    <mat-icon>assignment_ind</mat-icon>
-    Data Input Management
-  </a>
+  routerLink="/system/data-input-management" skipLocationChange>
+  <mat-icon>assignment_ind</mat-icon>
+  Data Input Management
+</a>
   <a *ngIf="authorized" mat-list-item class="nav-title main-link" routerLinkActive="list-item-active"
     routerLink="/system/view-report" skipLocationChange>
     <mat-icon>assignment_ind</mat-icon>

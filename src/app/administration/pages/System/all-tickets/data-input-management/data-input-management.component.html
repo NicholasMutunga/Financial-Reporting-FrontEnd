@@ -1,0 +1,195 @@
+<section class="content">
+    <div class="content-block">
+        <div class="block-header">
+            <!-- <app-breadcrumb [title]="' Data and Input Management'" [items]="['Home']"
+              [active_item]="'Data and Input Management'"></app-breadcrumb> -->
+        </div>
+        <div class="display">
+            <!-- Import Data Card -->
+            <div class="card">
+                <div class="body">
+                    <form id="importForm" action="#" method="post" enctype="multipart/form-data">
+                        <h1>Import Data</h1>
+                        <!-- <div class="row">
+                          <div class="col-md-4">
+                              <label for="financialComponent">ABSA Trial Balance</label>
+                              <select name="financialComponent" id="financialComponent"
+                                  formControlName="financialComponent">
+                                  <option value="Absa Bank Kenya PLC Trial Balance">Absa Bank Kenya PLC Trial
+                                      Balance</option>
+                                  <option value="Absa Asset Management Bank Trial Balance">Absa Asset
+                                      Management Bank Trial Balance</option>
+                                  <option value="Absa Securities Limited Trial Balance">Absa Securities
+                                      Limited Trial Balance</option>
+                                  <option value="Absa Bancassurence Intermediary Limited Trial Balance">Absa
+                                      Bancassurence Intermediary Limited Trial Balance</option>
+                              </select>
+                          </div> -->
+                        <div>
+                            <label for="fileType">Import File Type:</label>
+                            <select name="fileType" id="fileType">
+                                <option value="excel">Excel</option>
+                                <option value="word">Word</option>
+                                <option value="pdf">PDF</option>
+                            </select>
+                        </div>
+
+
+
+                        <div class="col-md-4">
+                            <label for="file">Select File:</label>
+                            <input type="file" (change)="handleFileInput($event.target.files)" name="file" id="file">
+                            <!-- <div class="conversion-options">
+                                <label class="conversion-option" onclick="downloadFile('excel')">
+                                    <img src="assets/images/Conversion/Excel.png" alt="Excel Icon">
+                                </label>
+                                <label class="conversion-option" onclick="downloadFile('word')">
+                                    <img src="assets/images/Conversion/Word.png" alt="Word Icon">
+                                </label>
+                                <label class="conversion-option" onclick="downloadFile('pdf')">
+                                    <img src="assets/images/Conversion/Pdf.png" alt="PDF Icon">
+                                </label>
+                            </div> -->
+                            <!-- TO BE EDITED -->
+                            <!-- <mat-tab label="UPLOAD TRIAL BALANCE" *ngIf="pageFunction === 'Add'">
+                                  <div [hidden]="hideSubmit">
+                                      <div class="row clearfix mx-2">
+                                          <div class="mt-4">
+                                              <div class="row clearfix">
+                                                  <h5>Upload Trial Balance File</h5>
+                                              </div>
+                                              <div class="row align-items-center">
+                                                  <div class="col-xl-10 col-lg-11 col-md-8 col-sm-6">
+                                                      <app-file-upload
+                                                          (change)="handleFileInput($event.target.files)">
+                                                      </app-file-upload>
+                                                  </div>
+                                                  <div class="col-xl-1 col-lg-1 col-md-4 col-sm-6">
+                                                      <button mat-raised-button color="primary" [hidden]="hideSubmit"
+                                                          (click)="downloadTemplate()">
+                                                          <i class="fa fa-download"></i> Trial Balance
+                                                          Template
+                                                      </button>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+
+                                  <div class="mt-4 mx-0">
+                                      <div
+                                          style="display: flex; flex-wrap: wrap; margin-right: 10px; margin-bottom: 10px;">
+                                          <mat-chip-list aria-label="Error selection">
+                                              <mat-chip color="accent" selected
+                                                  *ngFor="let itemError of itemErrors; let i = index">
+                                                  <span>{{ i + 1 }}. </span>
+                                                  {{ itemError.field }}: {{ itemError.message }}
+                                                  <mat-icon>error</mat-icon>
+                                              </mat-chip>
+                                          </mat-chip-list>
+                                      </div>
+
+                                      <div class="card">
+                                          <div class="header">
+                                              <h2>Trial Balance</h2>
+                                          </div>
+                                          <div class="tableBody">
+                                              <div class="table-responsive">
+                                                  <table class="table table-hover">
+                                                      <thead>
+                                                          <tr>
+                                                              <th>Account</th>
+                                                              <th>Account Description</th>
+                                                              <th>PL or BS</th>
+                                                              <th>Sub-Category</th>
+                                                              <th>Net</th>
+                                                          </tr>
+                                                      </thead>
+                                                      <tbody>
+                                                          <tr *ngFor="let item of items; let i = index">
+                                                              <td>{{ item.account }}</td>
+                                                              <td>{{ item.accountdescription }}</td>
+                                                              <td>{{ item.plorbs }}</td>
+                                                              <td>{{ item.sub-category }}</td>
+                                                              <td>{{ item.net}}</td>
+                                                          </tr>
+                                                      </tbody>
+                                                  </table>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+
+                                  <br>
+                                  <div class="row mx-4 mt-4">
+                                      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3">
+                                          <div mat-dialog-action [align]="'end'">
+                                              <button class="btn-space" type="button" mat-raised-button color="warn"
+                                                  mat-button (click)="cancel()">
+                                                  Cancel
+                                              </button>
+                                              <button mat-raised-button color="primary" [hidden]="hideSubmit"
+                                                  [class.auth-spinner]="posting"
+                                                  [disabled]="hasErrors() ||!items.length" (click)="submitBatch()">
+                                                  Submit Trial Balance
+                                              </button>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </mat-tab> -->
+                            <!-- END OF EDITING -->
+
+                            <!-- Conversion and Transfer Options Card -->
+
+                        </div>
+                        <!-- </div> -->
+
+                        <!-- ADDITION BY RISHAB -->
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="header">
+                                    <h2>Trial Balance</h2>
+                                </div>
+                                <div class="tableBody">
+                                    <div class="table-responsive">
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Account</th>
+                                                    <th>Account Description</th>
+                                                    <th>PL or BS</th>
+                                                    <th>Sub-Category</th>
+                                                    <th>Net</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr *ngFor="let item of items; let i = index">
+                                                    <td>{{ item.Account }}</td>
+                                                    <td>{{ item.AccountDescription }}</td>
+                                                    <td>{{ item.PLorBS }}</td>
+                                                    <td>{{ item.SubCategory }}</td>
+                                                    <td>{{ item.Net}}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <button class="btn btn-secondary" type="button"
+                                                (click)="cancel()">Cancel</button>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <button class="btn btn-primary" type="submit"
+                                                (click)="submitBatch()">Submit</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>

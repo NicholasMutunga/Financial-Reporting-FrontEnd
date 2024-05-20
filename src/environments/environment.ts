@@ -26,7 +26,7 @@
 
 export const environment = {
   production: true,
-  userAPI: 'http://192.168.91.72:2424',
+  userAPI: 'http://192.168.88.225:2424',
   systemConfigAPI: 'http://localhost:9002/system-config-service',
   productAPI: 'http://localhost:9002/products-service',
   crmAPI: 'http://localhost:9002/crm-service',
