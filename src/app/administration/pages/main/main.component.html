@@ -26,7 +26,7 @@
             <div class="row">
               <div class="col-lg-3 col-sm-6">
                 <div class="info-box7 bg-emtech order-info-box7"
-                  style="background-color: rgb(182, 38, 38); color: #fff;">
+                  style="background-color: rgba(178, 0, 67, 100); color: #fff;">
                   <div class="info-box7-block">
                     <h5 class="m-b-0">Pending Tasks</h5>
                     <h2 class="text-end"><span class="float-start"></span></h2>
@@ -39,7 +39,7 @@
               </div>
               <div class="col-lg-3 col-sm-6">
                 <div class="info-box7 bg-emtech order-info-box7"
-                  style="background-color: rgb(182, 38, 38); color: #fff;">
+                  style="background-color: rgba(178, 0, 67, 100); color: #fff;">
                   <div class="info-box7-block">
                     <h5 class="m-b-0">Ongoing Tasks</h5>
                     <h2 class="text-end"><span class="float-start"></span></h2>
@@ -52,7 +52,7 @@
               </div>
               <div class="col-lg-3 col-sm-6">
                 <div class="info-box7 bg-emtech order-info-box7"
-                  style="background-color: rgb(182, 38, 38); color: #fff;">
+                  style="background-color: rgba(178, 0, 67, 100); color: #fff;">
                   <div class="info-box7-block">
                     <h5 class="m-b-0">Complete Tasks</h5>
                     <h2 class="text-end"><span class="float-start"></span></h2>
@@ -66,7 +66,7 @@
 
               <div class="col-lg-3 col-sm-6">
                 <div class="info-box7 bg-emtech order-info-box7"
-                  style="background-color: rgb(182, 38, 38); color: #fff;">
+                  style="background-color: rgba(178, 0, 67, 100); color: #fff;">
                   <div class="info-box7-block">
                     <h5 class="m-b-0">Total Tasks</h5>
                     <h2 class="text-end"><span class="float-start"></span></h2>
@@ -84,7 +84,135 @@
       <!-- #END# Widgets -->
 
 
+      <!-- task manager -->
+      <div class="card-body">
+        <div class="row clearfix m-t-5 d-flex">
+          <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+            <div class="task-card h-200">
+              <div class="body">
+                <div class="card task-list">
+                  <h5>Your Tasks</h5>
+                  <div class="button">
+                    <button mat-raised-button color="primary" (click)="addTask()">Add Task</button>
+                  </div>
+                  <div>
+                    <ol>
+                      <li class="item1">Compile Organizations' Data</li>
+                      <li class="item2">Generate Financial Reports</li>
+                      <li class="item2">Analyze Quarterly Financial Performance</li>
+                      <li class="item2">Import Trial Balance</li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
+
+          <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+            <!-- <div class="card h-200"> -->
+            <div class="card stat-list " style="width: 500px;">
+              <h4>Task Statistics</h4>
+              <!-- <mat-progress-bar mode="determinate" value="40"></mat-progress-bar> -->
+              <ul>
+                <li class="item1">
+                  <div class="task-name"><a href="path/to/total-tasks" style="color: #dd1212;"><b>Total Tasks</b></a>
+                  </div>
+                  <div class="task-statistics">5</div>
+
+                </li>
+
+                <li class="item2">
+                  <div class="task-name"><a href="path/to/total-tasks" style="color: #dd1212;"><b>Pending
+                        Tasks</b></a></div>
+                  <div class="task-statistics">2</div>
+                  <div class="progress-bar">
+                    <mat-progress-bar class="custom-progress-bar" mode="determinate" value="40"></mat-progress-bar>
+                  </div>
+                </li>
+
+                <li class="item1">
+                  <div class="task-name"><a href="path/to/total-tasks" style="color: #2EBD2E;"><b>Complete
+                        Tasks</b></a></div>
+                  <div class="task-statistics">2</div>
+                  <div class="progress-bar">
+                    <mat-progress-bar mode="determinate" value="100"></mat-progress-bar>
+                  </div>
+                </li>
+
+                <li class="item1">
+                  <div class="task-name"><a href="path/to/total-tasks" style="color: #dd1212;"><b>Ongoing
+                        Tasks</b></a></div>
+                  <div class="task-statistics">1</div>
+                  <div class="progress-bar">
+                    <mat-progress-bar mode="determinate" value="60"></mat-progress-bar>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="cardbody">
+          <div class="toolbar">
+            <h2>Tasks</h2>
+            <button class="toolbar-button" onclick="addTask()">
+              <i class="fas fa-plus"></i> Add Task
+            </button>
+            <input type="text" class="toolbar-search" placeholder="Search tasks...">
+
+          </div>
+
+          <table>
+            <thead>
+              <tr>
+                <th><input type="checkbox" name="select"></th> <!-- New column for checkboxes -->
+                <th>Task Activity</th>
+                <th>Period</th>
+                <th>Status</th>
+                <th>Assignee</th>
+                <th>Deadline</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Example data with checkboxes -->
+              <tr>
+                <td><input type="checkbox" name="select"></td> <!-- Checkbox for each row -->
+                <td>Generate Financial reports</td>
+                <td>Daily</td>
+                <td>Complete</td>
+                <td>Waka Doe</td>
+                <td>24/4/2024</td>
+
+                <td>
+                  <button class="action-button" onclick="editData(this)">Edit</button>
+                  <button class="action-button" onclick="deleteData(this)">Delete</button>
+                  <button class="action-button" onclick="viewData(this)">View</button>
+                </td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" name="select"></td> <!-- Checkbox for each row -->
+                <td>Compile Organizations Data</td>
+                <td>Weekly</td>
+                <td>Ongoing</td>
+                <td>Liam Lisa</td>
+                <td>24/6/2024</td>
+                <td>
+                  <button class="action-button" onclick="editData(this)">Edit</button>
+                  <button class="action-button" onclick="deleteData(this)">Delete</button>
+                  <button class="action-button" onclick="viewData(this)">View</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+
+      <!-- end of task manager -->
       <!-- stats -->
       <!-- <div class="analytics">
       <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
@@ -198,9 +326,5 @@
     </div> -->
       <!-- end of cards -->
     </div>
-
-    <div class="row">
-    </div>
-
   </div>
 </section>
