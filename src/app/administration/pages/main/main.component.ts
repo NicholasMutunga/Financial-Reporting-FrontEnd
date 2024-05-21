@@ -54,7 +54,14 @@ export class MainComponent implements OnInit {
     // this.currentUser = this.tokenCookieService.getUser().username;
     // this.chart1();
     // this.chart2();
+
   }
+
+  addTask() {
+    // add themethod details
+  }
+
+
   //performance-line chart
   // private chart1() {
   //   this.lineChartOptions = {
