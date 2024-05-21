@@ -1,3 +1,4 @@
+// widgets
 .card {
   padding: 10px;
   margin: 0px;
@@ -32,4 +33,265 @@
 .bg-emtech {
   background-color: rgb(139, 0, 0, 1);
 
+}
+
+// task manager
+body {
+  overflow: hidden;
+}
+
+//BANNER
+.banner-content {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+
+}
+.button{
+  margin-bottom: 10px;
+}
+
+.custom-progress-bar .mat-progress-bar-fill::after {
+  background-color: #e91b22 ; /* Change this to your desired color */
+}
+
+.custom-progress-bar .mat-progress-bar-buffer {
+  background: white; /* Change this to your desired background color */
+}
+
+.progress-value {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+
+               body {
+                   font-family: Arial, sans-serif;
+               }
+               h2 {
+                   color: #dd1212;
+               }
+               table {
+                   width: 100%;
+                   border-collapse: collapse;
+                   margin-bottom: 20px;
+               }
+               th, td {
+                   border: 1px solid #ddd;
+                   padding: 8px;
+                   text-align: left;
+               }
+               th {
+                   background-color: #f2f2f2;
+               }
+               .overview, .summary {
+                   margin-bottom: 20px;
+                   padding: 20px;
+                   background-color: #f9f9f9;
+                   border: 1px solid #ddd;
+               }
+               .overview h3, .summary h3 {
+                   margin-top: 0;
+               }
+               form {
+                   margin-top: 20px;
+               }
+
+               .href{
+                  color:#dd1212;
+               }
+               
+// .toolbar {
+// display: flex;
+// justify-content: space-between;
+// align-items:left;
+// padding: 10px;
+// background-color: #f8f9fa;
+// border-bottom: 1px solid #dee2e6;
+// // outline: 1px;
+// margin-right:20px;
+//                 }
+
+.toolbar-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  align-items: right;
+}
+.toolbar-button {
+  margin-right: 10px;
+}
+
+//REMINDERS
+h5 {
+  color: #050505;
+  font-weight: bold;
+  text-align: center;
+}
+
+.task-list {
+  flex: 1;
+  width: 100%;
+  border-radius: 10px;
+  background: #ddd3d3;
+
+}
+
+.task-list li {
+  background-color: rgb(238, 232, 232); // Use Bootstrap's bg-light class color
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: large;
+  cursor: pointer;
+}
+
+.task-list li:hover {
+  background-color: #dd1212;
+}
+
+
+// .report-list li:active {
+//     background-color: hsl(29, 93%, 50%);
+// }
+
+.mat-icon {
+  color: hsl(244, 89%, 35%);
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  &:hover {
+      color: #f57a0e;
+  }
+}
+
+.information-box {
+  width: 100%;
+}
+
+.container-items {
+  width: 100%;
+  align-items: stretch;
+}
+
+/* Use flexbox for layouts */
+.card-body,
+.widget-container,
+.layout,
+.information-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+@media(max-width: 768px) {
+  .banner-content {
+      justify-content: space-around;
+  }
+}
+
+/* Adjust flex direction for smaller screens */
+@media (max-width: 768px) {
+
+  .content-block,
+  .banner-content,
+  .card-body,
+  .widget-container,
+  .layout,
+  .information-box {
+      flex-direction: row;
+  }
+}
+
+/* Adjust font sizes for smaller screens */
+@media (max-width: 768px) {
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+      font-size: 1.2em;
+      /* Adjust as needed */
+  }
+}
+
+.action-button {
+  margin-right: 10px; /* Adjust the value as needed */
+}
+
+.stat-list {
+  text-align: left !important; // Align text to the left
+  padding: 0; // Remove default padding
+  // list-style-type: none; // Remove default list styling
+  align-items: stretch;
+  margin-left: 10px;
+  width: 300px;
+
+  h6 {
+      color: #0c3bbe;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 10px;
+  }
+}
+
+h4 {
+  color: #0a0a0a;
+  font-weight: bold;
+  text-align: center;
+}
+
+.stat-list ol {
+  margin: 0; // Remove default margin
+  padding: 20px; // Remove default padding
+  width: 100%;
+  
+}
+
+// .stat-list li:hover {
+//     background-color: #380ed1;
+// }
+
+.job-list li,
+.stat-list li {
+  padding: 10px 10px; // Add vertical padding for spacing
+  border-bottom: 1px solid #ddd; // Optional: Add a bottom border for separation
+  outline: 10px solid #ccc;
+  margin-bottom: 10px;
+  width: 100%;
+  cursor: pointer;
+  
+
+}
+
+.task-name{
+  color: #dd1212;
+  font-weight:normal;
+  text-align: left;
+
+}
+
+
+.pending {
+  background-color: #f57a0e;
+}
+
+.approved {
+  background-color: green;
+}
+
+.load-more-btn {
+  background-color: hsl(244, 89%, 35%);
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  width: 50%;
+  align-self: center;
+  margin-bottom: 20px;
+  cursor: pointer;
 }
