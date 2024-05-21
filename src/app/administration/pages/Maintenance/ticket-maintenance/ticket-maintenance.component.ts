@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
@@ -8,6 +8,9 @@ import { NotificationService } from 'src/@core/helpers/NotificationService/notif
 import { DataStoreService } from 'src/@core/helpers/data-store.service';
 import { TicketLookupComponent } from '../../lookups/ticket-lookup/ticket-lookup.component';
 import { ReportIssueService } from '../../report-issue/report-issue.service';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 
 @Component({
   selector: 'app-ticket-maintenance',
@@ -15,6 +18,7 @@ import { ReportIssueService } from '../../report-issue/report-issue.service';
   styleUrls: ['./ticket-maintenance.component.scss']
 })
 export class TicketMaintenanceComponent implements OnInit, OnDestroy {
+
   lookupData: any;
   subsidiaryCode: any;
   priorityDescription: any;
@@ -29,6 +33,8 @@ export class TicketMaintenanceComponent implements OnInit, OnDestroy {
   randomCode: any;
   onsShowCode: boolean = false;
   submitting: boolean = false;
+
+
   constructor(
     public fb: FormBuilder,
     private router: Router,
@@ -132,4 +138,10 @@ export class TicketMaintenanceComponent implements OnInit, OnDestroy {
       this.formData.controls.subsidiaryCode.setValue(this.subsidiaryCode);
     });
   }
+
+  addSubsidiary(){}
+  refresh(){}
+  applyFilter($event){}
+
+
 }

@@ -63,6 +63,7 @@ import { TicketLookupComponent } from './pages/lookups/ticket-lookup/ticket-look
 import { MyTicketsComponent } from './pages/System/all-tickets/my-tickets/my-tickets.component';
 import { EscalateMaintenanceComponent } from './pages/Maintenance/escalate-maintenance/escalate-maintenance.component';
 import { EscalateLookupComponent } from './pages/lookups/escalate-lookup/escalate-lookup.component';
+import { SubsidaryLookupComponent } from './pages/lookups/subsidary-lookup/subsidary-lookup.component';
 
 
 @NgModule({
@@ -123,6 +124,7 @@ import { EscalateLookupComponent } from './pages/lookups/escalate-lookup/escalat
     MyTicketsComponent,
     EscalateMaintenanceComponent,
     EscalateLookupComponent,
+    SubsidaryLookupComponent,
 
   ],
   exports: [
