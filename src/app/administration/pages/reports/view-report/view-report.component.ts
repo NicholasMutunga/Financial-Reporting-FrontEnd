@@ -73,7 +73,7 @@ export class ViewReportComponent implements OnInit {
   }
   ngOnInit(): void {}
 
-
+//LOGICS FOR GENERATE-ACTION
   generateIncomeStatement(){
   
   //  this.incomeStatementService.getIncomeStatement().subscribe(data => {
@@ -104,7 +104,9 @@ export class ViewReportComponent implements OnInit {
     //awaiting API logics
   }
 
-  //logics for Download actions
+
+
+  //LOGICS FOR DOWNLOAD-ACTION
   downloadIncomeStatement(){
   //awaiting logics
   }
@@ -122,6 +124,72 @@ export class ViewReportComponent implements OnInit {
   }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //   iniAuthorization() {
 //     console.log('Init auth');
